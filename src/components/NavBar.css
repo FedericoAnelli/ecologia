@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Reseteo defaults */
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+/* Contenedor Principal */
+.contenedorNavBar{
+    font-family: 'Montserrat', sans-serif;
+    height: 15vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: grid;
+    grid-auto-columns: 100%;
+    grid-auto-rows: 70% 30%;
+    row-gap: 0;
+    column-gap: 0;
+
+}
+
+/* Defaults */
+ul{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+li{
+    list-style-type: none;
+    cursor: pointer;
+    user-select: none;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+/* Customizacion top menu */
+.topMenu{
+    height: 100%;
+    background-color: rgba(25, 161, 52, 0.8);
+    display: grid;
+    grid-template-columns: 15% 15% 40% 15% 15%;
+    grid-template-rows: 100%;
+    column-gap: 0;
+    row-gap: 0;
+    font-size: 15px;
+    filter: drop-shadow(0px 1px 2px #000);
+}
+
+/* Customizacion bottom menu */
+.bottomMenu{
+    height: 100%;
+    background-color: white;
+
+    display: grid;
+    grid-template-columns: 15% 15% 15% 15%;
+    grid-template-rows: 100%;
+    column-gap: 0;
+    row-gap: 0;
+    font-size: 15px;
+}
+
+.bottomLink{
+    color: rgb(70, 70, 70);
+    transition: all 0.5s;
+}
+
+
+.bottomLink:hover{
+    color: rgb(153, 152, 152);
+}
