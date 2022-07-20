@@ -1,4 +1,7 @@
 import './NavBar.css';
+import companyLogo from './assets/environmentalism.webp';
+import CartWidget from './CartWidget';
+
 const NavBar = () => {
     return (
         
@@ -7,9 +10,9 @@ const NavBar = () => {
             <ul className="topMenu">
                     <li>Descubrir</li>
                     <li>Empieza un proyecto</li>
-                    <li>LOGO</li>
-                    <li>Búsqueda</li>
-                    <li>Iniciar Sesión</li>
+                    <li><img className="logoClass" src={companyLogo}></img></li>
+                    <li> <input className="inputStyling" type="text" placeholder='Búsqueda'></input></li>
+                    <li><CartWidget /></li>
             </ul>
 
 
