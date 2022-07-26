@@ -3,7 +3,7 @@ import './ItemListContainer';
 import rawData from '../assets/initialConfig.json';
 
 const ItemListContainer = ({greeting}) => {
-    const [listaProyectos, setProyectos]= useState([];)
+    const [listaProyectos, setProyectos]= useState([]);
     const onAdd = (amount) => {
         console.log(`Se agregaron ${amount} items en el carrito`)
     }
