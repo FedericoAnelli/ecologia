@@ -1,19 +1,17 @@
 import './ItemCount.css';
 import { useEffect, useState } from "react";
 
-function ItemCount ({stockDisponible, stockInicial, onAdd}) {
-    let initial = stockInicial;
-    const [contador, setContador] = useState(initial);
-
+function ItemCount ({availableStock, initialStock, onAdd}) {
+    const [count, setCount] = useState(initialStock);
     const addOne = () => {
-        if(contador < stockDisponible){
-            setContador(contador+1);
+        if(count < availableStock){
+            setCount(count+1);
         }
     }
 
     const substractOne = () => {
-        if (contador > stockInicial){
-            setContador(contador-1);
+        if (count > initialStock){
+            setCount(count-1);
         }
     }
 
@@ -21,11 +19,11 @@ function ItemCount ({stockDisponible, stockInicial, onAdd}) {
         <div>
             <div>
                 <button className='contadorButton' type='button' onClick={substractOne}>-</button>
-                <input className='contadorInput' type="number" value={contador}></input>
+                <input className='contadorInput' type="number" value={count}></input>
                 <button className='contadorButton' type='button' onClick={addOne}>+</button>
             </div>
             <div>
-                <button className='agregarAlCarritoButton' type='button' onClick={()=>onAdd(contador)}> AGREGAR AL CARRITO </button>
+                <button className='agregarAlCarritoButton' type='button' onClick={()=>onAdd(count)}> AGREGAR AL CARRITO </button>
             </div>
         </div>
 
