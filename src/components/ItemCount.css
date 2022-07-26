@@ -10,6 +10,13 @@
     text-align: center;
 }
 
+.agregarAlCarritoButton{
+    height: 30px;
+    width: 100%;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -21,3 +28,4 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
