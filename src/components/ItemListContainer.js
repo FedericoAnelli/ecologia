@@ -1,8 +1,8 @@
 import ItemCount from './ItemCount';
 import './ItemListContainer.css';
 
-const onAdd = (cantidad) => {
-    console.log(`Se agregaron ${cantidad} items en el carrito`)
+const onAdd = (amount) => {
+    console.log(`Se agregaron ${amount} items en el carrito`)
 }
 
 const ItemListContainer = ({greeting}) => {

@@ -18,12 +18,12 @@ function ItemCount ({availableStock, initialStock, onAdd}) {
     return (
         <div>
             <div>
-                <button className='contadorButton' type='button' onClick={substractOne}>-</button>
-                <input className='contadorInput' type="number" value={count}></input>
-                <button className='contadorButton' type='button' onClick={addOne}>+</button>
+                <button className='countButton' type='button' onClick={substractOne}>-</button>
+                <input className='countInput' type="number" value={count}></input>
+                <button className='countButton' type='button' onClick={addOne}>+</button>
             </div>
             <div>
-                <button className='agregarAlCarritoButton' type='button' onClick={()=>onAdd(count)}> AGREGAR AL CARRITO </button>
+                <button className='addButton' type='button' onClick={()=>onAdd(count)}> AGREGAR AL CARRITO </button>
             </div>
         </div>
 

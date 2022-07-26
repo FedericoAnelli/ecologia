@@ -1,16 +1,16 @@
-.contadorButton{
+.countButton{
     height: 30px;
     width: 30px;
     cursor: pointer;
 }
 
-.contadorInput{
+.countInput{
     height: 30px;
     width: 200px;
     text-align: center;
 }
 
-.agregarAlCarritoButton{
+.addButton{
     height: 30px;
     width: 100%;
     margin-top: 5px;
