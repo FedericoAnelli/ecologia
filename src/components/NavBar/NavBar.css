@@ -81,7 +81,7 @@ li{
 .inputStyling{
     border-radius: 12px;
     padding-left: 2%;
-    background-image: url("./assets/loupe.webp");
+    background-image: url("../assets/loupe.webp");
     background-repeat: no-repeat;
     background-position: 95% 20%;
     background-size: 8%

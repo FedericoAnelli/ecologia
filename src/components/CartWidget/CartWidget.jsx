@@ -1,5 +1,5 @@
-import './CartWidget.css';
-import cartWidget from './assets/cartWidget.webp';
+import './CartWidget.css'
+import cartWidget from '../assets/cartWidget.webp';
 
 const CartWidget = () => {
     return (

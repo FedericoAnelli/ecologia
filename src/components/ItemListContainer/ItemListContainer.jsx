@@ -1,5 +1,5 @@
-import ItemCount from './ItemCount';
-import './ItemListContainer.css';
+import ItemCount from '../ItemCount/ItemCount';
+import './ItemListContainer';
 
 const onAdd = (amount) => {
     console.log(`Se agregaron ${amount} items en el carrito`)

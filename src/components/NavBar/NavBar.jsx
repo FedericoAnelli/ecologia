@@ -1,6 +1,7 @@
+import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.css';
-import companyLogo from './assets/environmentalism.webp';
-import CartWidget from './CartWidget';
+import companyLogo from '../assets/environmentalism.webp';
+
 
 const NavBar = () => {
     return (
