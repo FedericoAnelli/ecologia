@@ -2,17 +2,17 @@ import './ItemCount.css';
 import { useEffect, useState } from "react";
 
 function ItemCount ({stockDisponible, stockInicial, onAdd}) {
-    let initial = parseInt(stockInicial);
+    let initial = stockInicial;
     const [contador, setContador] = useState(initial);
 
     const addOne = () => {
-        if(contador < parseInt(stockDisponible)){
+        if(contador < stockDisponible){
             setContador(contador+1);
         }
     }
 
     const substractOne = () => {
-        if (contador > parseInt(stockInicial)){
+        if (contador > stockInicial){
             setContador(contador-1);
         }
     }
