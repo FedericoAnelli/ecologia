@@ -43,3 +43,10 @@
 h2{
     margin: 2% 5% 5% 5%;
 }
+
+/* Div size for counter and add to cart */
+.divCounter{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}

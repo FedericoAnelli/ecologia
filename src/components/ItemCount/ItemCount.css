@@ -1,8 +1,16 @@
+.counterContainer{
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  width: 60%;
+}
+
 .countButton{
     height: 30px;
     width: 15%;
     cursor: pointer;
     border: 1px solid rgb(180, 180, 180);
+    border-radius: 5px;
 }
 
 .countInput{
@@ -19,6 +27,7 @@
     margin-top: 5px;
     cursor: pointer;
     border: 1px solid rgb(180, 180, 180);
+    border-radius: 5px;
 }
 
 /* Chrome, Safari, Edge, Opera */

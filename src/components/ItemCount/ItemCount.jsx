@@ -19,7 +19,7 @@ function ItemCount ({availableStock, initialStock, onAdd}) {
     }
 
     return (
-        <div>
+        <div className='counterContainer'>
             <div className='counterBorder'>
                 <button className='countButton' type='button' onClick={substractOne}>-</button>
                 <input className='countInput' type="number" value={count}></input>

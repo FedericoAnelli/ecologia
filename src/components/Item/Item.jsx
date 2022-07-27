@@ -14,7 +14,9 @@ return(
         <img className="imgStyling" src={proyecto.coverImage}></img>
         <p className="textoDonacion"><strong>Donación:</strong> ${proyecto.donacion}</p>
         <p className="descriptionText">{proyecto.description}</p>
+        <div className="divCounter">
         <ItemCount availableStock={proyecto.stock} initialStock={1} onAdd={onAdd} />
+        </div>
     </div>
 )
 }
