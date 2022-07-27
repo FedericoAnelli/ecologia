@@ -1,23 +1,23 @@
-{
-    "01": { 
+[
+{ 
         "id":"GA0001",
         "name":"Granja de Agua",
         "category": "water",
         "coverImage": "./water.webp",
         "descripcion": "Proyecto granja de agua"
     },
-    "02": {
+{
         "id":"RE0001",
         "name":"Reforestacion",
         "category": "forest",
         "coverImage": "./trees.webp",
         "descripcion": "Proyecto reforestación"
     },
-    "03":{
+{
         "id":"AN0001",
         "name":"Tigres",
         "category": "animals",
         "coverImage": "./tiger.webp",
         "descripcion": "Proyecto tigres"
     }
-}
+]

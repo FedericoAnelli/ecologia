@@ -1,18 +1,18 @@
 .countButton{
     height: 30px;
-    width: 30px;
+    width: 15%;
     cursor: pointer;
 }
 
 .countInput{
     height: 30px;
-    width: 200px;
+    width: 60%;
     text-align: center;
 }
 
 .addButton{
     height: 30px;
-    width: 100%;
+    width: 90%;
     margin-top: 5px;
     cursor: pointer;
 }

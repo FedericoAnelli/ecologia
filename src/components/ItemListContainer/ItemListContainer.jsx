@@ -1,40 +1,36 @@
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemListContainer';
-import rawData from '../assets/initialConfig.json';
+import './ItemListContainer.css';
+import proyectos from '../assets/initialConfig.json';
+import { useState, useEffect } from 'react';
+import ItemList from '../ItemList/ItemList';
 
 const ItemListContainer = ({greeting}) => {
-    const [listaProyectos, setProyectos]= useState([]);
-    const onAdd = (amount) => {
-        console.log(`Se agregaron ${amount} items en el carrito`)
-    }
+    const [listaProyectos, setProyectos] = useState([]);
+    const [mensajeError, setMensajeError] = useState(false);
     
     const data = new Promise((resolve, reject) => {
-    
+
         let condition = true;
         setTimeout(() => {
             if(condition){
-                resolve(rawData)
+                resolve(proyectos)
             }else{
-                reject('Salio mal')
+                reject(mensajeError)
             }
-        }, 3000);
-    
+        }, 1000);
     })
-    /*
+
     useEffect(() => {
         data
-            .then((response)=> console.log('respuesta', response))
-    
-    
+            .then((response)=> setProyectos(response))
+            .catch((error)=> setMensajeError("Error. No cargo la data."))
+            console.log(listaProyectos)
     }, []);
-*/
-
-
 
     return (
-        <div>
-        <h1>{greeting}</h1>
-        <ItemCount availableStock={5} initialStock={1} onAdd={onAdd} />
+        <div className='flexContainer'>
+        <ItemList listaProyectos={listaProyectos} />
         </div>
     );
 } 
