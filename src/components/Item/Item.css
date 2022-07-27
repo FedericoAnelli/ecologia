@@ -1,16 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+
 .itemContainer{
+    font-family: 'Comfortaa', cursive;
+    font-weight: 100;
     width: 90%;
-    background-color: rgba(255, 255, 255, 0.699);
+    background-color: rgba(230, 230, 230, 0.8);
     color: black;
     border-radius: 8px;
     padding: 2% 0% 5% 0%;
     transition: all 0.5s;
     cursor: pointer;
+    border: 0.1px solid rgb(200, 200, 200) ;
 }
 
 .itemContainer:hover{
     transform: scale(1.1);
-    filter: drop-shadow(0px 0px 15px #000);
+    filter: drop-shadow(0px 0px 15px rgb(160, 160, 160));
 }
 
 .imgStyling{
@@ -20,4 +26,5 @@
 
 .textoDonacion{
     align-self: flex-start;
+    font-size: medium;
 }
