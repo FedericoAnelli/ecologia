@@ -3,12 +3,15 @@ import { useEffect, useState } from "react";
 
 function ItemCount ({availableStock, initialStock, onAdd}) {
     const [count, setCount] = useState(initialStock);
+
+    // Remueve uno
     const addOne = () => {
         if(count < availableStock){
             setCount(count+1);
         }
     }
 
+    // Suma uno
     const substractOne = () => {
         if (count > initialStock){
             setCount(count-1);

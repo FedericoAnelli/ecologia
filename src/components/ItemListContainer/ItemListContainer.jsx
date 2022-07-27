@@ -18,7 +18,7 @@ const ItemListContainer = ({greeting}) => {
             }else{
                 reject(mensajeError)
             }
-        }, 1000);
+        }, 2000);
     })
 
     useEffect(() => {

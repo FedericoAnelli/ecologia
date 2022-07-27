@@ -7,7 +7,7 @@ const Item = ({proyecto}) => {
 const onAdd = (amount) => {
     console.log(`Se agregaron ${amount} items en el carrito`)
 }
-
+// Devuelve card de producto
 return(
     <div className="itemContainer">
         <p>{proyecto.name}</p>

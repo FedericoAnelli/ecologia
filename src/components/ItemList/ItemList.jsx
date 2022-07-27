@@ -2,6 +2,7 @@ import React from "react";
 import Item from "../Item/Item";
 import "./ItemList.css";
 
+// Listado de Proyectos
 const ItemList = ({listaProyectos}) => {
     return(
         <div className="gridList">
