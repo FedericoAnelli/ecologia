@@ -12,7 +12,7 @@ return(
     <div className="itemContainer">
         <h2>{proyecto.name}</h2>
         <img className="imgStyling" src={proyecto.coverImage}></img>
-        <p className="textoDonacion">Donación: ${proyecto.donacion}</p>
+        <p className="textoDonacion"><strong>Donación:</strong> ${proyecto.donacion}</p>
         <p className="descriptionText">{proyecto.description}</p>
         <ItemCount availableStock={proyecto.stock} initialStock={1} onAdd={onAdd} />
     </div>

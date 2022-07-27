@@ -4,7 +4,7 @@
 .itemContainer{
     font-family: 'Comfortaa', cursive;
     font-weight: 100;
-    width: 90%;
+    width: 100%;
     background-color: rgba(230, 230, 230, 0.8);
     color: black;
     border-radius: 8px;
@@ -27,8 +27,9 @@
 
 /* Texto costo donacion */ 
 .textoDonacion{
-    align-self: flex-start;
+    text-align: left;
     font-size: medium;
+    margin: 2% 5% 5% 5%;
 }
 
 /* Texto descripción */
