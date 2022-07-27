@@ -10,9 +10,10 @@ const onAdd = (amount) => {
 // Devuelve card de producto
 return(
     <div className="itemContainer">
-        <p>{proyecto.name}</p>
+        <h2>{proyecto.name}</h2>
         <img className="imgStyling" src={proyecto.coverImage}></img>
         <p className="textoDonacion">Donación: ${proyecto.donacion}</p>
+        <p className="descriptionText">{proyecto.description}</p>
         <ItemCount availableStock={proyecto.stock} initialStock={1} onAdd={onAdd} />
     </div>
 )

@@ -1,6 +1,5 @@
 .gridList{
     width: 100%;
-    margin: 5% 2% 0 2%;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-auto-rows: 1fr;
@@ -9,4 +8,5 @@
     justify-content: center;
     justify-items: center;
     align-items: flex-start;
+    padding: 2% 2% 0 2%;
 }

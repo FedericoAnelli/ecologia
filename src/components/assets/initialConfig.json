@@ -4,7 +4,7 @@
         "name":"Granja de Agua",
         "category": "water",
         "coverImage": "https://raw.githubusercontent.com/FedericoAnelli/ecologia/main/src/components/assets/water.webp",
-        "descripcion": "Proyecto granja de agua",
+        "description": "Proyecto granja de agua",
         "donacion": "500",
         "stock": "15"
     },
@@ -13,7 +13,7 @@
         "name":"Reforestacion",
         "category": "forest",
         "coverImage": "https://raw.githubusercontent.com/FedericoAnelli/ecologia/main/src/components/assets/trees.webp",
-        "descripcion": "Proyecto reforestación",
+        "description": "Proyecto reforestación",
         "donacion": "800",
         "stock": "5"
     },
@@ -22,7 +22,7 @@
         "name":"Tigres",
         "category": "animals",
         "coverImage": "https://raw.githubusercontent.com/FedericoAnelli/ecologia/main/src/components/assets/tiger.webp",
-        "descripcion": "Proyecto tigres",
+        "description": "Proyecto tigres",
         "donacion": "1000",
         "stock": "7"
     }

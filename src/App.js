@@ -11,9 +11,12 @@ function App() {
 
       <header className="App-header">
         <NavBar />
-        <ItemListContainer greeting='Hola'/>
       </header>
-      
+
+      <div className='centralContent'>
+        <ItemListContainer greeting='Hola'/>
+      </div>
+
     </div>
 
   );
