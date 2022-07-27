@@ -5,22 +5,36 @@
   width: 60%;
 }
 
+/* Botones SUMA Y RESTA de articulos */
 .countButton{
     height: 30px;
-    width: 15%;
+    width: 13.8%;
     cursor: pointer;
     border: 1px solid rgb(180, 180, 180);
     border-radius: 5px;
+    transition: all 0.5s;
 }
 
+.countButton:hover{
+  background-color: rgb(191, 191, 191);
+}
+
+.countButton:active{
+  transform: scale(0.8);
+}
+
+/* Input numerico */
 .countInput{
-    height: 30px;
+    height: 28px;
     width: 60%;
+    margin: 0 1% 0 1%;
     text-align: center;
-    border-top: 1px solid rgb(180, 180, 180);
-    border-bottom: 1px solid rgb(180, 180, 180);;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 5px;
+    user-select: none;
 }
 
+/* Boton AGREGAR AL CARRITO */
 .addButton{
     height: 30px;
     width: 90%;
@@ -28,6 +42,15 @@
     cursor: pointer;
     border: 1px solid rgb(180, 180, 180);
     border-radius: 5px;
+    transition: all 0.5s;
+}
+
+.addButton:hover{
+  background-color: rgb(191, 191, 191);
+}
+
+.addButton:active{
+  transform: scale(0.9);
 }
 
 /* Chrome, Safari, Edge, Opera */
