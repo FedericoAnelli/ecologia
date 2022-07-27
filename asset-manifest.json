@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/ecologia/static/css/main.2a637591.css",
+    "main.css": "/ecologia/static/css/main.a42173cc.css",
     "main.js": "/ecologia/static/js/main.40768c4c.js",
     "static/js/787.dc83b07f.chunk.js": "/ecologia/static/js/787.dc83b07f.chunk.js",
     "static/media/environmentalism.webp": "/ecologia/static/media/environmentalism.c554d85f1ac495e4267c.webp",
@@ -8,12 +8,12 @@
     "static/media/loupe.webp": "/ecologia/static/media/loupe.0b96872f7d4c1ead84a6.webp",
     "static/media/logo.svg": "/ecologia/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/ecologia/index.html",
-    "main.2a637591.css.map": "/ecologia/static/css/main.2a637591.css.map",
+    "main.a42173cc.css.map": "/ecologia/static/css/main.a42173cc.css.map",
     "main.40768c4c.js.map": "/ecologia/static/js/main.40768c4c.js.map",
     "787.dc83b07f.chunk.js.map": "/ecologia/static/js/787.dc83b07f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2a637591.css",
+    "static/css/main.a42173cc.css",
     "static/js/main.40768c4c.js"
   ]
 }
