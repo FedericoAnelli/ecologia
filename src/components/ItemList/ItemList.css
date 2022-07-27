@@ -9,4 +9,21 @@
     justify-items: center;
     align-items: flex-start;
     padding: 2% 6% 0 5%;
+
 }
+
+@media (max-width: 800px) {
+    .gridList{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-rows: 1fr;
+    column-gap: 3%;
+    row-gap: 2%;
+    justify-content: center;
+    justify-items: center;
+    align-items: flex-start;
+    padding: 2% 6% 0 5%;
+    }
+}
+
