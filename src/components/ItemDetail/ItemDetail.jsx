@@ -11,6 +11,7 @@ const ItemDetail = ({ project }) => {
       <div className="detailsColumn">
         <h1 className="headingStyling">{project.name}</h1>
         <p className="descriptionStyling">{project.description}</p>
+        <p className="descriptionStyling"> <strong>Donación:</strong> ${project.donacion}</p>
           <div className="stylingCounter">
             <ItemCount availableStock={5} initialStock={1} />
           </div>
