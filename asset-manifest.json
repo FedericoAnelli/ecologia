@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/ecologia/static/css/main.4d488eb2.css",
-    "main.js": "/ecologia/static/js/main.32fbeebe.js",
+    "main.css": "/ecologia/static/css/main.c9231ccb.css",
+    "main.js": "/ecologia/static/js/main.879f9a49.js",
     "static/js/787.dc83b07f.chunk.js": "/ecologia/static/js/787.dc83b07f.chunk.js",
     "static/media/environmentalism.webp": "/ecologia/static/media/environmentalism.c554d85f1ac495e4267c.webp",
     "static/media/cartWidget.webp": "/ecologia/static/media/cartWidget.9f2c922b0a7530700b80.webp",
     "static/media/loupe.webp": "/ecologia/static/media/loupe.0b96872f7d4c1ead84a6.webp",
     "static/media/logo.svg": "/ecologia/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/ecologia/index.html",
-    "main.4d488eb2.css.map": "/ecologia/static/css/main.4d488eb2.css.map",
-    "main.32fbeebe.js.map": "/ecologia/static/js/main.32fbeebe.js.map",
+    "main.c9231ccb.css.map": "/ecologia/static/css/main.c9231ccb.css.map",
+    "main.879f9a49.js.map": "/ecologia/static/js/main.879f9a49.js.map",
     "787.dc83b07f.chunk.js.map": "/ecologia/static/js/787.dc83b07f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4d488eb2.css",
-    "static/js/main.32fbeebe.js"
+    "static/css/main.c9231ccb.css",
+    "static/js/main.879f9a49.js"
   ]
 }
