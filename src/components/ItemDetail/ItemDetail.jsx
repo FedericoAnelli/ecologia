@@ -13,7 +13,7 @@ const ItemDetail = ({ project }) => {
         <p className="descriptionStyling">{project.description}</p>
         <p className="descriptionStyling"> <strong>Donación:</strong> ${project.donacion}</p>
           <div className="stylingCounter">
-            <ItemCount availableStock={5} initialStock={1} />
+            <ItemCount availableStock={project.stock} initialStock={1} />
           </div>
         </div>
       </div>
