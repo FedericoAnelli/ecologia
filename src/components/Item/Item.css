@@ -15,11 +15,14 @@
     user-select: none;
 }
 
-
-
 .itemContainer:hover{
     transform: scale(1.01);
     filter: drop-shadow(0px 0px 15px rgb(160, 160, 160));
+}
+
+.itemContainer:active{
+    transform: scale(1);
+    filter: none;
 }
 
 /* Estilo imagen en card */

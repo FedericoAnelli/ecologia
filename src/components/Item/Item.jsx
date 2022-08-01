@@ -1,6 +1,7 @@
 import React from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import "./Item.css";
+import { Link } from "react-router-dom";
 
 const Item = ({proyecto}) => {
 
@@ -9,6 +10,7 @@ const onAdd = (amount) => {
 }
 // Devuelve card de producto
 return(
+    <Link style={{textDecoration: 'none'}} to={`/proyecto/${proyecto.id}`}>
     <div className="itemContainer">
         <h2>{proyecto.name}</h2>
         <img className="imgStyling" src={proyecto.coverImage}></img>
@@ -18,6 +20,7 @@ return(
         <ItemCount availableStock={proyecto.stock} initialStock={1} onAdd={onAdd} />
         </div>
     </div>
+    </Link>
 )
 }
 

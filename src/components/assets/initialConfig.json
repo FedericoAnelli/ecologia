@@ -1,6 +1,6 @@
 [
 { 
-        "id":"GA0001",
+        "id":"GDA001",
         "name":"Granja de Agua",
         "category": "water",
         "coverImage": "https://raw.githubusercontent.com/FedericoAnelli/ecologia/main/src/components/assets/water.webp",
@@ -9,7 +9,7 @@
         "stock": "15"
     },
 {
-        "id":"RE0001",
+        "id":"REF001",
         "name":"Reforestacion",
         "category": "forest",
         "coverImage": "https://raw.githubusercontent.com/FedericoAnelli/ecologia/main/src/components/assets/trees.webp",
@@ -18,7 +18,7 @@
         "stock": "5"
     },
 {
-        "id":"AN0001",
+        "id":"ANI001",
         "name":"Tigres",
         "category": "animals",
         "coverImage": "https://raw.githubusercontent.com/FedericoAnelli/ecologia/main/src/components/assets/tiger.webp",
