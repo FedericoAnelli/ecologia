@@ -1,0 +1,36 @@
+    /* Imagen del proyecto */
+    .mainImage{
+        max-height: 100%;
+        max-width: 100%;
+        border-radius: 5px;
+    }
+
+    /* Main container grid */
+    .grid-2{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1%;
+        margin: 2% 5% 5% 5%;
+    }
+
+    .headingStyling{
+        align-self: flex-start;
+    }
+
+    .descriptionStyling{
+        margin: 5%;
+        text-align: left;
+        align-self: flex-start;
+    }
+
+    .stylingCounter{
+        align-self: flex-end;
+    }
+
+    .detailsColumn{
+        display: grid;
+        height: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1fr 1fr;
+        align-items: center;
+    }

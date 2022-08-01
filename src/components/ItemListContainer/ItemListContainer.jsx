@@ -1,30 +1,22 @@
 import './ItemListContainer';
 import './ItemListContainer.css';
-import getProjects from '../assets/initialConfig.json';
-import { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
+import { useState, useEffect } from 'react';
 
 const ItemListContainer = ({greeting}) => {
     const [projects, setProjects] = useState([]);
     const [errorMsg, setErrorMsg] = useState(false);
 
-    const data = new Promise((resolve, reject) => {
-        
-        let condition = true;
-        setTimeout(() => {
-            if(condition){
-                resolve(getProjects)
-            }else{
-                reject(errorMsg)
-            }
-        }, 2000);
-    })
+    const getProjects = () => {
+        fetch("https://raw.githubusercontent.com/FedericoAnelli/ecologia/main/src/components/assets/initialConfig.json")
+            .then((response) => response.json())
+            .then((data) => setProjects(data))
+            .catch((error) => setErrorMsg("Error, no se pudieron tomar los datos."));
+    }
 
     useEffect(() => {
-        data
-            .then((response)=> setProjects(response))
-            .catch((error)=> setErrorMsg("Error. No cargo la data."))
-    });
+        getProjects()
+    }, []);
 
     return (
         <div className='flexContainer'>

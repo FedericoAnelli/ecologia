@@ -4,22 +4,23 @@ import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = ()=>{
     const [item, setItem] = useState([]);
-
-    const { itemId } = useParams();
-
-    const getOneProduct = (id) => {
+    const { projectId } = useParams([]);
+    
+    const getProject = (id) => {
         fetch("https://raw.githubusercontent.com/FedericoAnelli/ecologia/main/src/components/assets/initialConfig.json")
             .then((response) => response.json())
-            .then((data) => setItem(data.filter((item) => item.id === itemId)[0]))
+            .then((data) => setItem(data.filter((item) => item.id === projectId)[0]))
     };
 
     useEffect(() => {
-        getOneProduct(itemId);
-    }, [itemId]);
+        getProject(projectId);
+    }, [projectId]);
 
   return (
     <div>
-                <ItemDetail item={item} />
+
+        <ItemDetail project={item} />
+
     </div>
   )
 ;

@@ -1,12 +1,21 @@
 import ItemCount from "../ItemCount/ItemCount";
-const ItemDetail = ({ item }) => {
+import "./ItemDetail.css";
+const ItemDetail = ({ project }) => {
 
 
 
   return (
     <div>
-      <h1>Test</h1>
-      <ItemCount availableStock={5} initialStock={1} />
+      <div className="grid-2">
+        <img className="mainImage" src={project.coverImage}></img>
+      <div className="detailsColumn">
+        <h1 className="headingStyling">{project.name}</h1>
+        <p className="descriptionStyling">{project.description}</p>
+          <div className="stylingCounter">
+            <ItemCount availableStock={5} initialStock={1} />
+          </div>
+        </div>
+      </div>
     </div>
     );
 }

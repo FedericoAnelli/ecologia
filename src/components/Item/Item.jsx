@@ -10,17 +10,19 @@ const onAdd = (amount) => {
 }
 // Devuelve card de producto
 return(
-    <Link style={{textDecoration: 'none'}} to={`/project/${project.id}`}>
+
     <div className="itemContainer">
+    <Link style={{textDecoration: 'none', color: 'black'}} to={`/project/${project.id}`}>
         <h2>{project.name}</h2>
         <img className="imgStyling" src={project.coverImage}></img>
         <p className="textoDonacion"><strong>Donación:</strong> ${project.donacion}</p>
         <p className="descriptionText">{project.description}</p>
+    </Link>
         <div className="divCounter">
         <ItemCount availableStock={project.stock} initialStock={1} onAdd={onAdd} />
         </div>
     </div>
-    </Link>
+
 )
 }
 

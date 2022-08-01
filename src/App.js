@@ -10,9 +10,10 @@ function App() {
   return (
 
     <div className="App">
+
       <NavBar />
       <Routes>
-        <Route path="/project/:itemId" element={<ItemDetailContainer />} />
+        <Route path="/project/:projectId" element={<ItemDetailContainer />} />
         <Route path="/cart" element={<Cart />} />
         <Route
                     path="/category/:category"
@@ -21,7 +22,8 @@ function App() {
         <Route path="*" element={<ItemListContainer />} />
         <Route path="/" element={<ItemListContainer />} />
       </Routes>
-      <ItemDetailContainer />
+
+
     </div>
 
   );
