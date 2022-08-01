@@ -3,25 +3,23 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = ()=>{
-    const URL_initialConfig = '../assets/initialConfig.json';
     const [item, setItem] = useState([]);
-    const {id} = useParams();
 
-    const getOneProyect = (id) => {
-        fetch(URL_initialConfig)
+    const { itemId } = useParams();
+
+    const getOneProduct = (id) => {
+        fetch("https://raw.githubusercontent.com/FedericoAnelli/ecologia/main/src/components/assets/initialConfig.json")
             .then((response) => response.json())
-            .then((data) => setItem(data.filter(item => item.id == id)[0]))
-            .catch(error => console.log(error));
+            .then((data) => setItem(data.filter((item) => item.id === itemId)[0]))
     };
 
     useEffect(() => {
-        getOneProyect(id);
-    }, [id]);
+        getOneProduct(itemId);
+    }, [itemId]);
 
   return (
     <div>
-        <h1>ItemDetailContainer</h1>
-        <ItemDetail />
+                <ItemDetail item={item} />
     </div>
   )
 ;

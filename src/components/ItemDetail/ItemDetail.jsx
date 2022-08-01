@@ -1,9 +1,11 @@
 import ItemCount from "../ItemCount/ItemCount";
-const ItemDetail = ({item}) => {
+const ItemDetail = ({ item }) => {
+
+
+
   return (
     <div>
-      <h1>ItemDetail</h1>
-
+      <h1>Test</h1>
       <ItemCount availableStock={5} initialStock={1} />
     </div>
     );

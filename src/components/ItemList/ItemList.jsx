@@ -3,13 +3,13 @@ import Item from "../Item/Item";
 import "./ItemList.css";
 
 // Listado de Proyectos
-const ItemList = ({listaProyectos}) => {
+const ItemList = ({projects}) => {
     return(
         <div className="gridList">
-        {listaProyectos.map((proyecto)=> 
+        {projects.map((projects)=> 
             <Item 
-                key={proyecto.id} 
-                proyecto={proyecto}
+                key={projects.id} 
+                project={projects}
             />)}
         </div>
     )

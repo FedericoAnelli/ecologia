@@ -12,7 +12,7 @@ const NavBar = () => {
                     <li>Descubrir</li>
                     <li>Empieza un proyecto</li>
                     <li><img className="logoClass" src={companyLogo}></img></li>
-                    <li> <input className="inputStyling" type="text" placeholder='Búsqueda'></input></li>
+                    <li> <input className="inputStyling" type="text" placeholder="Búsqueda"></input></li>
                     <li><CartWidget /></li>
             </ul>
 
