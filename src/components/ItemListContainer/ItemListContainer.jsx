@@ -38,8 +38,8 @@ const ItemListContainer = ({greeting}) => {
                 <ItemList projects={projects} />
         ) : (
                 <div id="cssload-pgloading">
-                <div class="cssload-loadingwrap">
-                    <ul class="cssload-bokeh">
+                <div className="cssload-loadingwrap">
+                    <ul className="cssload-bokeh">
                         <li></li>
                         <li></li>
                         <li></li>
