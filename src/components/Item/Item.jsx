@@ -8,9 +8,9 @@ const Item = ({project}) => {
 const onAdd = (amount) => {
     console.log(`Se agregaron ${amount} items en el carrito`)
 }
+
 // Devuelve card de producto
 return(
-
     <div className="itemContainer">
     <Link style={{textDecoration: 'none', color: 'black'}} to={`/project/${project.id}`}>
         <h2>{project.name}</h2>
@@ -22,8 +22,8 @@ return(
         <ItemCount availableStock={project.stock} initialStock={1} onAdd={onAdd} />
         </div>
     </div>
-
 )
+
 }
 
 export default Item

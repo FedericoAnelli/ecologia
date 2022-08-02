@@ -17,6 +17,7 @@ const ItemDetail = ({ project }) => {
       </div>
     </div>
     );
+    
 }
 
 export default ItemDetail;

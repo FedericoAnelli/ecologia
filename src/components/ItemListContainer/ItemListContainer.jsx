@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 const ItemListContainer = ({greeting}) => {
+
     const [projects, setProjects] = useState([]);
     const [errorMsg, setErrorMsg] = useState(false);
     const { category } = useParams();    
@@ -50,6 +51,7 @@ const ItemListContainer = ({greeting}) => {
             )}
         </div>
     );
+
 } 
 
 export default ItemListContainer;

@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import '../ItemListContainer/ItemListContainer.css';
 
 const ItemDetailContainer = ()=>{
+  
     const [item, setItem] = useState([]);
     const { projectId } = useParams([]);
     
@@ -36,6 +37,7 @@ const ItemDetailContainer = ()=>{
     </div>
   )
 ;
+
 }
 
 export default ItemDetailContainer;
