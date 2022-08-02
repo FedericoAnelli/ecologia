@@ -1,11 +1,11 @@
 import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.css';
 import companyLogo from '../assets/environmentalism.webp';
-
+import { Routes } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     return (
-        
         <div className="contenedorNavBar">   
 
             <ul className="topMenu">
@@ -17,10 +17,10 @@ const NavBar = () => {
             </ul>
 
             <ul className="bottomMenu">
-                    <li><a className='bottomLink'>Agua</a></li>
-                    <li><a className='bottomLink'>Animales</a></li>
-                    <li><a className='bottomLink'>Sustentabilidad</a></li>
-                    <li><a className='bottomLink'>Forestación</a></li>
+            <li><Link className='bottomLink' to="*">Mostrar todos</Link></li>
+            <li><Link className='bottomLink' to="/category/water">Agua</Link></li>
+            <li><Link className='bottomLink' to="/category/animals">Animales</Link></li>
+            <li><Link className='bottomLink' to="/category/forest">Forestación</Link></li>
             </ul>
             
         </div>

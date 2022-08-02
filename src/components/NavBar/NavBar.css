@@ -70,11 +70,14 @@ li{
     column-gap: 0;
     row-gap: 0;
     font-size: 15px;
+    align-items: center;
 }
 
 .bottomLink{
     color: rgb(70, 70, 70);
     transition: all 0.5s;
+    text-decoration: none;
+    color: black;
 }
 
 
