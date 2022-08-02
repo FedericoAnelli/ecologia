@@ -15,13 +15,17 @@ function App() {
       <Routes>
         <Route path="/project/:projectId" element={<ItemDetailContainer />} />
         <Route path="/cart" element={<Cart />} />
+        <Route
+                    path="/category/:category"
+                    element={<ItemListContainer />}
+                />
         <Route path="*" element={<ItemListContainer />} />
         <Route path="/" element={<ItemListContainer />} />
       </Routes>
     </div>
 
   );
-  
+
 }
 
 export default App;

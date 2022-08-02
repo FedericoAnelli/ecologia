@@ -1,8 +1,7 @@
 import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.css';
 import companyLogo from '../assets/environmentalism.webp';
-import { Routes } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Link, Routes } from 'react-router-dom';
 
 const NavBar = () => {
 
