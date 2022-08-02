@@ -11,7 +11,7 @@ const NavBar = () => {
             <ul className="topMenu">
                     <li>Descubrir</li>
                     <li>Empieza un proyecto</li>
-                    <li><img className="logoClass" src={companyLogo}></img></li>
+                    <li><Link to="/"><img className="logoClass" src={companyLogo}></img></Link></li>
                     <li> <input className="inputStyling" type="text" placeholder="Búsqueda"></input></li>
                     <li><CartWidget /></li>
             </ul>

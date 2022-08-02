@@ -2,8 +2,6 @@ import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 const ItemDetail = ({ project }) => {
 
-
-
   return (
     <div>
       <div className="grid-2">

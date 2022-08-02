@@ -80,7 +80,6 @@ li{
     color: black;
 }
 
-
 .bottomLink:hover{
     color: rgb(153, 152, 152);
 }
@@ -89,6 +88,7 @@ li{
     font-size: 10px;
 }
 
+/* Estilo del buscador */
 .inputStyling{
     border-radius: 12px;
     padding-left: 2%;
@@ -99,7 +99,13 @@ li{
 
 }
 
+/* Estilo logo */
 .logoClass{
     height: 10%;
     width: 10%;
+    transition: all 0.5s;
+}
+
+.logoClass:active{
+    transform: scale(0.5);
 }

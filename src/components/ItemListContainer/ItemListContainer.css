@@ -1,3 +1,4 @@
+/* Contenedor general del listado de articulos */ 
 .flexContainer{
     display: flex;
     justify-content: center;
@@ -5,6 +6,8 @@
     height: 100%;
     z-index: 0;
 }
+
+/* Todos los estilos debajo pertenecen al spinner/loader */
 
 #cssload-pgloading:after {
 		content: "";
