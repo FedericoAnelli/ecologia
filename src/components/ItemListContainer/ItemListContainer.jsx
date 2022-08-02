@@ -9,16 +9,14 @@ const ItemListContainer = ({greeting}) => {
     const [projects, setProjects] = useState([]);
     const [errorMsg, setErrorMsg] = useState(false);
     const { category } = useParams();    
-    console.log(category)
-    const getProjects = new Promise((resolve) => {
 
+    const getProjects = new Promise((resolve) => {
         setTimeout(() => {
         fetch("https://raw.githubusercontent.com/FedericoAnelli/ecologia/main/src/components/assets/initialConfig.json")
             .then((response) => response.json())
             .then((data) => resolve(data))
             .catch(setErrorMsg("Error, no se pudieron tomar los datos."));
         }, 1000)
-
     });
 
     useEffect(() => {
