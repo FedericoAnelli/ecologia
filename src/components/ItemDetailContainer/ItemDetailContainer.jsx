@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
+import '../ItemListContainer/ItemListContainer.css';
 
 const ItemDetailContainer = ()=>{
     const [item, setItem] = useState([]);
@@ -18,9 +19,20 @@ const ItemDetailContainer = ()=>{
 
   return (
     <div>
-
+      {item.length !== 0 ? (
         <ItemDetail project={item} />
-
+        ) : (
+        <div id="cssload-pgloading">
+                <div class="cssload-loadingwrap">
+                    <ul class="cssload-bokeh">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        )}
     </div>
   )
 ;

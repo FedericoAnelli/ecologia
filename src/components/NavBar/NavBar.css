@@ -85,6 +85,10 @@ li{
     color: rgb(153, 152, 152);
 }
 
+.bottomLink:active{
+    font-size: 10px;
+}
+
 .inputStyling{
     border-radius: 12px;
     padding-left: 2%;

@@ -35,17 +35,19 @@ const ItemListContainer = ({greeting}) => {
     return (
         <div className='flexContainer'>
             {projects.length != 0 ? (
-        <ItemList projects={projects} />
-        ) : (<div id="cssload-pgloading">
-        <div class="cssload-loadingwrap">
-            <ul class="cssload-bokeh">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
-    </div>)}
+                <ItemList projects={projects} />
+        ) : (
+                <div id="cssload-pgloading">
+                <div class="cssload-loadingwrap">
+                    <ul class="cssload-bokeh">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            )}
         </div>
     );
 } 
