@@ -1,3 +1,4 @@
+import Loader from '../Loaders/Loader';
 import './ItemListContainer';
 import './ItemListContainer.css';
 import ItemList from '../ItemList/ItemList';
@@ -38,16 +39,7 @@ const ItemListContainer = ({greeting}) => {
             {projects.length != 0 ? (
                 <ItemList projects={projects} />
         ) : (
-                <div id="cssload-pgloading">
-                <div className="cssload-loadingwrap">
-                    <ul className="cssload-bokeh">
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
+                <Loader />
             )}
         </div>
     );

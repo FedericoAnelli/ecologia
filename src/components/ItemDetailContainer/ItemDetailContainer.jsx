@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
-import '../ItemListContainer/ItemListContainer.css';
+import Loader from "../Loaders/Loader";
 
 const ItemDetailContainer = ()=>{
-  
+
     const [item, setItem] = useState([]);
     const { projectId } = useParams([]);
     
@@ -23,16 +23,7 @@ const ItemDetailContainer = ()=>{
       {item.length !== 0 ? (
         <ItemDetail project={item} />
         ) : (
-        <div id="cssload-pgloading">
-                <div className="cssload-loadingwrap">
-                    <ul className="cssload-bokeh">
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
+        <Loader />
         )}
     </div>
   )
