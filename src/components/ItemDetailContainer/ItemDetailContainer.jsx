@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import Loader from "../Loaders/Loader";
 
 const ItemDetailContainer = ()=>{
-
     const [item, setItem] = useState([]);
     const { projectId } = useParams([]);
     
