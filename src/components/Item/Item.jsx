@@ -10,7 +10,6 @@ const { addToCart } = useContext(CartContext);
 
 const onAdd = (amount) => {
     addToCart(project, amount);
-    console.log(amount)
 }
 
 // Devuelve card de producto

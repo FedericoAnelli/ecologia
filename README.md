@@ -26,16 +26,17 @@ web-vitals (2.1.4)
 
 # Comandos
 
-### `react-scripts start`
+### `npm start`
 
 Corre la app en modo de desarrollo.
 Se visualiza desde [http://localhost:3000]
 
-### `gh-pages -d build`
+### `yarn run deploy`
+
 
 Deploy a Github pages
 
-### `react-scripts build`
+### `npm build`
 
 Buildea la app para producción en carpeta "build".
 

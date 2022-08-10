@@ -18,7 +18,9 @@ const CartProvider = ({ children }) => {
                 ...item,
                 quantity: quantity
             }
-        setCart([itemToAdd]);
+            const updatedCart = [...cart, itemToAdd]
+            setCart(updatedCart)
+            console.log(cart);
         return
         }
 
@@ -35,12 +37,12 @@ const CartProvider = ({ children }) => {
         }
         else{
         // Agrega item nuevo
+        console.log(itemDuplicatesIndex)
             const itemToAdd = {
                 ...item,
                 quantity: quantity
             }
             const updatedCart = [...cart, itemToAdd]
-            console.log(item)
             setCart(updatedCart)
         }
     }
