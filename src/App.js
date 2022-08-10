@@ -12,7 +12,6 @@ function App() {
   return (
 
     <div className="App">
-      <BrowserRouter basename='/react-js'>
       <CartProvider>
       <NavBar />
       <Routes>
@@ -27,7 +26,6 @@ function App() {
         <Route path="/cart" element={<Cart />} />
       </Routes>
       </CartProvider>
-      </BrowserRouter>
     </div>
 
   );
