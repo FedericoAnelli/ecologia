@@ -12,7 +12,7 @@ const ItemDetail = ({ project }) => {
   const handleAdd = (quantityToAdd) => {
     setCount(quantityToAdd);
     navigate("/cart");
-    console.log(`Se agregaron ${quantityToAdd} items en el carrito`);
+    addToCart(project, quantityToAdd);
   }
 
   return (

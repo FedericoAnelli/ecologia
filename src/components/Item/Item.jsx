@@ -1,12 +1,16 @@
-import React from "react";
+import { useState, useContext } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import "./Item.css";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 
 const Item = ({project}) => {
 
+const { addToCart } = useContext(CartContext);
+
 const onAdd = (amount) => {
-    console.log(`Se agregaron ${amount} items en el carrito`)
+    addToCart(project, amount);
+    console.log(amount)
 }
 
 // Devuelve card de producto
