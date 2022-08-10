@@ -1,8 +1,11 @@
-const Cart = () => {
-    
+import './Cart.css'
+import cartWidget from '../assets/cartWidget.webp'
+
+function Cart ({amountInCart}) {    
     return (
-        <div>
-        <h1>Cart</h1>
+        <div className='containerStyle'>
+            <p className='amountInCartStyle'>{amountInCart}</p>
+            <img className="cartWidgetStyle" src={cartWidget}></img>
         </div>
     );
 

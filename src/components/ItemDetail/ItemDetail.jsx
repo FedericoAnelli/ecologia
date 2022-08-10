@@ -1,9 +1,11 @@
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ project }) => {
+  const { addToCart } = useContext(CartContext);
   const [count, setCount] = useState(0);
   const navigate = useNavigate();
 
