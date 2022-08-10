@@ -14,15 +14,56 @@ De los proyectos, el más parecido es GoFundMe. Sin embargo, es diferente. Mient
 
 # Dependencias utilizadas
 
-@testing-library/jest-dom (5.16.4)
-@testing-library/react (13.3.0)
-@testing-library/user-event (13.5.0)
-gh-pages (4.0.0)
-react (18.2.0)
-react-dom (18.2.0)
-react-router-dom (6.3.0)
-react-scripts (5.0.1)
-web-vitals (2.1.4)
+### `gh-pages (4.0.0)`
+
+1. El package.json tiene que tener un campo `homepage`: 
+
+```javascript
+  "homepage": "https://<github-username>.github.io/<project-repo>"
+```
+
+2.1. Instalar `gh-pages` via npm:
+
+```javascript
+  npm i --save-dev gh-pages
+```
+
+2.2. O yarn (recomendado):
+
+```javascript
+  yarn add --dev gh-pages
+```
+
+3.1. Agregar nuevo `script` a `package.json` via `yarn`:
+
+```javascript
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
+```
+
+3.2. O `npm`:
+
+```javascript
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+```
+
+
+
+### `react-router-dom (6.3.0)`
+
+Instalar vía npm
+
+```javascript
+$ npm install react-router-dom@6
+```
+
+o Yarn
+
+```javascript
+$ yarn add react-router-dom@6
+```
+
 
 # Comandos
 
