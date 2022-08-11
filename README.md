@@ -81,6 +81,6 @@ Deploy a Github pages
 
 Buildea la app para producción en carpeta "build".
 
-### `git-clone https://github.com/FedericoAnelli/ecologia.git`
+### `git clone https://github.com/FedericoAnelli/ecologia.git`
 
 Clona el proyecto en un nuevo directorio
