@@ -18,15 +18,13 @@ const CartProvider = ({ children }) => {
                 ...item,
                 quantity: quantity
             }
-            const updatedCart = [...cart, itemToAdd]
-            setCart(updatedCart)
-            console.log(cart);
+            setCart([itemToAdd])
         return
         }
 
         // Agrega item duplicado
         const itemDuplicatesIndex = cart.findIndex((itemInCart) => itemInCart.id === item.id)
-        if (itemDuplicatesIndex) {
+        if (itemDuplicatesIndex >= 0) {
             const itemToUpdate = {
                 ...item,
                 quantity: cart[itemDuplicatesIndex].quantity + quantity
@@ -37,7 +35,6 @@ const CartProvider = ({ children }) => {
         }
         else{
         // Agrega item nuevo
-        console.log(itemDuplicatesIndex)
             const itemToAdd = {
                 ...item,
                 quantity: quantity
