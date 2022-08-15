@@ -44,7 +44,13 @@ const CartProvider = ({ children }) => {
         }
     }
 
-    const removeFromCart = () => {}
+    function removeFromCart(itemToRemove){
+        console.log(itemToRemove)
+        const itemToRemoveIndex = cart.findIndex((itemInCart) => itemInCart.id === itemToRemove.id)
+        const updatedCart = [...cart]
+        updatedCart.splice(itemToRemoveIndex, 1)
+        setCart(updatedCart)
+    }
 
     const quantityInCart = cart.reduce((previous, item) => previous + item.quantity, 0)
 

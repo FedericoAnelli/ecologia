@@ -11,16 +11,19 @@ function Cart () {
 
         const array = [];
         for (let i = 0; i < cart.length; i++) {
+           const cursorPointer = {cursor: 'pointer'};
            let costo = valueToShare.cart[i].quantity * valueToShare.cart[i].donacion;
            let divStyle = {  backgroundImage: 'url(' + cart[i].coverImage + ')', width: '20%', height: '20%', objectFit: 'contain' };
            array.push( 
             <img className="imageStyle" src={cart[i].coverImage}></img>)
            array.push(
-           <p>{cart[i].name}</p> )
+            <p>{cart[i].name}</p> )
            array.push(
-           <div>{cart[i].quantity}</div> )
+            <div>{cart[i].quantity}</div> )
            array.push(
             <div>$ {costo}</div> )
+            array.push(
+            <div style={cursorPointer} onClick={()=> {valueToShare.removeFromCart(cart[i])}}>X</div> )
         }
         return array;
     }
@@ -50,6 +53,7 @@ function Cart () {
                 <p>Artículo</p>
                 <p>Cantidad</p>
                 <p>Precio</p>
+                <p>Eliminar</p>
                 {listCartItems(valueToShare.cart)}
             </div>
             <div>
