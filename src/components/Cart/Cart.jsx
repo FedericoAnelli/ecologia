@@ -1,9 +1,11 @@
 import "./Cart.css"
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
+import { useNavigate } from 'react-router-dom';
 
 function Cart () {
     const valueToShare = useContext(CartContext)
+    const navigate = useNavigate();
 
     function listCartItems(cart){
 
@@ -30,6 +32,15 @@ function Cart () {
         }
 
         return total;
+    }
+
+    function navigateToHome(){
+        navigate('/')
+    }
+
+    if (valueToShare.quantityInCart === 0){
+        const cursorPointer = {cursor: 'pointer'};
+        return <p>No hay items. Click <strong style={cursorPointer} onClick={navigateToHome}>ACA</strong> para volver.</p>
     }
 
     return (

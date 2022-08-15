@@ -7,7 +7,6 @@ import './CartWidget.css'
 // Muestra el widget de carrito
 const CartWidget = () => {
     const valueToShare = useContext(CartContext)
-
     const navigate = useNavigate();
     
     const navigateToCart = () => {
