@@ -1,11 +1,49 @@
-import './Cart.css'
-import cartWidget from '../assets/cartWidget.webp'
+import "./Cart.css"
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
 
-function Cart ({amountInCart}) {    
+function Cart () {
+    const valueToShare = useContext(CartContext)
+
+    function listCartItems(cart){
+
+        const array = [];
+        for (let i = 0; i < cart.length; i++) {
+           let costo = valueToShare.cart[i].quantity * valueToShare.cart[i].donacion;
+           let divStyle = {  backgroundImage: 'url(' + cart[i].coverImage + ')', width: '20%', height: '20%', objectFit: 'contain' };
+           array.push( 
+            <img className="imageStyle" src={cart[i].coverImage}></img>)
+           array.push(
+           <p>{cart[i].name}</p> )
+           array.push(
+           <div>{cart[i].quantity}</div> )
+           array.push(
+            <div>$ {costo}</div> )
+        }
+        return array;
+    }
+
+    function returnTotal(){
+        let total = 0;
+        for (let i = 0; i < valueToShare.cart.length; i++) {
+            total += valueToShare.cart[i].quantity * valueToShare.cart[i].donacion;
+        }
+
+        return total;
+    }
+
     return (
-        <div className='containerStyle'>
-            <p className='amountInCartStyle'>{amountInCart}</p>
-            <img className="cartWidgetStyle" src={cartWidget}></img>
+        <div className="generalView">
+            <div className="itemsGrid">
+                <p>Imagen</p>
+                <p>Artículo</p>
+                <p>Cantidad</p>
+                <p>Precio</p>
+                {listCartItems(valueToShare.cart)}
+            </div>
+            <div>
+                <p>Total: ${returnTotal()}</p>
+            </div>
         </div>
     );
 

@@ -1,13 +1,28 @@
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
-import Cart from '../Cart/Cart';
 import cartWidget from '../assets/cartWidget.webp'
+import { useNavigate } from 'react-router-dom';
+import './CartWidget.css'
 
 // Muestra el widget de carrito
 const CartWidget = () => {
     const valueToShare = useContext(CartContext)
+
+    const navigate = useNavigate();
+    
+    const navigateToCart = () => {
+            navigate('/cart')
+    }
+
+    if (valueToShare.quantityInCart === 0){
+        return <></>
+    }
+
     return (
-        <Cart  amountInCart={valueToShare.quantityInCart} />
+        <div className='containerStyle' onClick={navigateToCart}>
+            <p className='amountInCartStyle'>{valueToShare.quantityInCart}</p>
+            <img className="cartWidgetStyle" src={cartWidget}></img>
+        </div>
     );
 } 
 

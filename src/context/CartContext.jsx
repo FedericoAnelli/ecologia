@@ -46,8 +46,10 @@ const CartProvider = ({ children }) => {
 
     const removeFromCart = () => {}
 
+    const quantityInCart = cart.reduce((previous, item) => previous + item.quantity, 0)
+
     const valueToShare = {
-        cart, isInCart, cleanCart, addToCart, removeFromCart, quantityInCart: cart.length
+        cart, isInCart, cleanCart, addToCart, removeFromCart, quantityInCart
     }
 
     return(
