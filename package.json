@@ -2,7 +2,7 @@
   "name": "ecologia",
   "homepage": "https://federicoanelli.github.io/ecologia",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -45,5 +45,21 @@
     "@babel/preset-env": "^7.18.9",
     "babel-loader": "^8.2.5",
     "webpack": "^5.74.0"
+  },
+  "description": "El siguiente proyecto busca convertirse en una plataforma en donde los usuarios puedan donar dinero a causas o proyectos específicos relacionados a temas de ecología/sustentablidad.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FedericoAnelli/ecologia.git"
+  },
+  "keywords": [
+    "ecologia",
+    "kickstarter",
+    "coderhouse"
+  ],
+  "author": "Federico Anelli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FedericoAnelli/ecologia/issues"
   }
 }

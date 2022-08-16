@@ -72,14 +72,9 @@ $ yarn add react-router-dom@6
 Corre la app en modo de desarrollo.
 Se visualiza desde [http://localhost:3000]
 
-### `yarn run deploy`
+### `npm i ecologia`
 
-
-Deploy a Github pages
-
-### `npm build`
-
-Buildea la app para producción en carpeta "build".
+Instala el paquete desde NPM
 
 ### `git clone https://github.com/FedericoAnelli/ecologia.git`
 
