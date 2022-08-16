@@ -1,7 +1,7 @@
 import './ItemCount.css';
 import { useEffect, useState } from "react";
 
-function ItemCount ({availableStock, initialStock, onAdd}) {
+function ItemCount ({availableStock, initialStock, onAdd, buttonName}) {
 
     const [count, setCount] = useState(initialStock);
     // Remueve uno
@@ -26,7 +26,7 @@ function ItemCount ({availableStock, initialStock, onAdd}) {
                 <button className='countButton' type='button' onClick={addOne}>+</button>
             </div>
             <div>
-                <button className='addButton' type='button' onClick={()=>onAdd(count)}> AGREGAR AL CARRITO </button>
+                <button className='addButton' type='button' onClick={()=>onAdd(count)}> {buttonName} </button>
             </div>
         </div>
     );

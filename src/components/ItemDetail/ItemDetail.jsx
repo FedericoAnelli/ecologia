@@ -24,7 +24,7 @@ const ItemDetail = ({ project }) => {
         <p className="descriptionStyling">{project.description}</p>
         <p className="descriptionStyling"> <strong>Donación:</strong> ${project.donacion}</p>
           <div className="stylingCounter">
-            <ItemCount availableStock={project.stock} initialStock={1} onAdd={handleAdd}/>
+            <ItemCount availableStock={project.stock} initialStock={1} onAdd={handleAdd} buttonName="TERMINAR MI COMPRA"/>
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ return(
         <p className="descriptionText">{project.description}</p>
     </Link>
         <div className="divCounter">
-        <ItemCount availableStock={project.stock} initialStock={1} onAdd={onAdd} />
+        <ItemCount availableStock={project.stock} initialStock={1} onAdd={onAdd} buttonName="AGREGAR AL CARRITO"/>
         </div>
     </div>
 )
