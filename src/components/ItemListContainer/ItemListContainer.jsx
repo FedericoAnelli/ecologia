@@ -8,7 +8,7 @@ import getProjects from '../Services/DataRetrieve';
 import { collection, getDocs, getFirestore} from "firebase/firestore";
 
 const ItemListContainer = ({greeting}) => {
-    const [projects, setProjects] = useState([]);  
+    const [projects, setProjects] = useState([]); 
 
     useEffect(() => {
       const db = getFirestore();
