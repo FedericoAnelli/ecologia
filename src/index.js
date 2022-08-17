@@ -4,6 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'; 
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBsheYPMcEM77lwMskY9Y3kaHeMPGQFdj0",
+    authDomain: "ecologia-ec495.firebaseapp.com",
+    projectId: "ecologia-ec495",
+    storageBucket: "ecologia-ec495.appspot.com",
+    messagingSenderId: "866784523458",
+    appId: "1:866784523458:web:22fe3f7e3aac61ef21775b",
+    measurementId: "G-X2KZHTGJ70"
+  };
+
+  const app = initializeApp(firebaseConfig);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

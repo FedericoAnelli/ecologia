@@ -5,25 +5,22 @@ import ItemList from '../ItemList/ItemList';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import getProjects from '../Services/DataRetrieve';
+import { collection, getDocs, getFirestore} from "firebase/firestore";
 
 const ItemListContainer = ({greeting}) => {
-    const [projects, setProjects] = useState([]);
-    const { category } = useParams();    
+    const [projects, setProjects] = useState([]);  
 
     useEffect(() => {
-        getProjects
-            .then((response) => {
-                if (category) {
-                    setProjects(
-                        response.filter((project) => project.category === category)
-                        );
-                } else {
-                    setProjects(response);
-                }
-            })
-            .catch((error) => console.log("No se pudieron cargar los datos.", error));
-    }, [category]);
-
+      const db = getFirestore();
+      const itemsCollection = collection(db, 'items')
+      
+      getDocs(itemsCollection)
+        .then((snapshot) => {
+            const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+            setProjects(data)
+        })
+        .catch((error) => console.log(error))
+    }, [])
     return (
         <div className='flexContainer'>
             {projects.length != 0 ? (
