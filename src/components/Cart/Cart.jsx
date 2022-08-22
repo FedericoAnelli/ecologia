@@ -56,8 +56,8 @@ function Cart () {
                 <p>Eliminar</p>
                 {listCartItems(valueToShare.cart)}
             </div>
-            <div>
-                <p>Total: ${returnTotal()}</p>
+            <div className="totalContainer">
+                <p><strong>Total:</strong> ${returnTotal()}</p>
             </div>
         </div>
     );
