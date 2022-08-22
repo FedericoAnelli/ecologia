@@ -45,7 +45,6 @@ const CartProvider = ({ children }) => {
     }
 
     function removeFromCart(itemToRemove){
-        console.log(itemToRemove)
         const itemToRemoveIndex = cart.findIndex((itemInCart) => itemInCart.id === itemToRemove.id)
         const updatedCart = [...cart]
         updatedCart.splice(itemToRemoveIndex, 1)
