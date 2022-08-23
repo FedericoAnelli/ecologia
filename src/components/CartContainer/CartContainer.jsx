@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import { CartContext } from "../../context/CartContext";
 import Cart from "../Cart/Cart";
 import "./CartContainer.css";
+import { useNavigate } from 'react-router-dom';
 
 const USER_DEMO = {
     name: "fede",
@@ -16,8 +17,14 @@ const USER_DEMO = {
 const CartContainer = () => {
     const valueToShare = useContext(CartContext)
     const { cart } = useContext(CartContext);
+    const navigate = useNavigate();
+    
     const total = cart.reduce((acc, item) => acc + item.donacion * item.quantity, 0)
     const handleDelete = (item) => {valueToShare.removeFromCart(item)};
+
+    const navigateToHome = () => {
+        navigate('/')
+    }
 
     const sendOrder = () => {
         const newOrder = {
@@ -35,13 +42,17 @@ const CartContainer = () => {
     }
 
     return (
+        <Container className="cartContainer">
 
-        <Container className='cartContainer'>
+        { cart.length !== 0 ? (   
+            <div className="cartContainer">        
             <Cart items={cart} onDelete={handleDelete}/>
             <p className='totalP'><strong>Total:</strong> ${total}</p>
             <button className='finalizeButton' onClick={sendOrder}>Finalizar compra</button>
-        </Container>
+            </div> 
+        ) : (<div className="cartContainer"><p>El carrito está vacío. Click <strong onClick={navigateToHome}>ACÁ</strong> para volver.</p></div>)}
 
+        </Container>
 
     )
 
@@ -49,3 +60,12 @@ const CartContainer = () => {
 
 export default CartContainer;
 
+/* 
+
+        <Container className='cartContainer'>
+            <Cart items={cart} onDelete={handleDelete}/>
+            <p className='totalP'><strong>Total:</strong> ${total}</p>
+            <button className='finalizeButton' onClick={sendOrder}>Finalizar compra</button>
+        </Container>
+
+*/
