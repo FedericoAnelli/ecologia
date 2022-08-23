@@ -9,7 +9,6 @@ const RegistrationContainer = () => {
     const navigate = useNavigate();
 
     const handleRegistration = (email, password) => {
-        console.log(email, password);
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           // Signed in
