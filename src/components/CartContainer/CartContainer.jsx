@@ -35,7 +35,7 @@ const CartContainer = () => {
             .then(({id}) => {
                 Swal.fire({
                     title: '¡Gracias!',
-                    html: '<p>Su pedido ha sido enviado.<br> Número de órden: ' + id+ '</p>',
+                    html: '<p>Su pedido ha sido enviado.<br> Número de órden: <strong>' + id+ '</strong></p>',
                     icon: 'success',
                     confirmButtonText: 'OK'
                 })
@@ -47,12 +47,15 @@ const CartContainer = () => {
     
     const handleSendOrder = () => {
         Swal.fire({
-            html: 
-            '<input id="swal-input1" class="swal2-input" placeholder="Ingresar nombre">' +
-            '<input id="swal-input2" class="swal2-input" placeholder="Ingresar teléfono">' +
-            '<input id="swal-input3" class="swal2-input" placeholder="Ingresar mail">',
+            title: '<p class="titleAlert">Datos de la compra</p>',
+            html: '<div><p class="inputTexts">Nombre</p>' +
+            '<input id="swal-input1" class="inputField" type="text" placeholder="Ingresar nombre">' +
+            '<div><p class="inputTexts">Teléfono</p>' +
+            '<input id="swal-input2" class="inputField" type="tel" placeholder="Ingresar teléfono">' +
+            '<div><p class="inputTexts">Email</p>' +
+            '<input id="swal-input3" class="inputField" type="email" placeholder="Ingresar mail"></div>',
             showCancelButton: true,
-            confirmButtonText: 'Enviar',
+            confirmButtonText: '<p class="inputTexts">Enviar</p>',
             showLoaderOnConfirm: true,
             focusConfirm: false,
             preConfirm: () => {
