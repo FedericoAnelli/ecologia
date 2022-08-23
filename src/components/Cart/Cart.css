@@ -1,7 +1,7 @@
 .itemsGrid{
     margin: 5% 5% 0 5%;
     display: grid;
-    grid-template-columns: 20% 20% 20% 25% 10%;
+    grid-template-columns: 20% 30% 20% 20% 2%;
     grid-auto-rows: 50px;
     row-gap: 0;
     column-gap: 0;
@@ -26,9 +26,21 @@
 }
 
 .totalContainer{
-    margin: 5% 27% 0 5%;
+    margin: 5% 20% 0 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+}
+
+.alignX{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.alignColumnCenter{
+    display: flex;
+    justify-content: center;
 }
