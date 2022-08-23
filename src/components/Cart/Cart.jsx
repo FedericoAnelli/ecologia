@@ -4,15 +4,15 @@ import "./Cart.css"
 const Cart = ({items, onDelete}) => (
     <Table striped bordered hover>  
         <thead>
-            <tr>
+            <tr className='alignColumnCenter'>
                 <th>Producto</th>
                 <th>Cantidad</th>
                 <th>Precio</th>
                 <th>Subtotal</th>
-                <th className='alignColumnCenter'>Eliminar</th>
+                <th >Eliminar</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody className='alignColumnCenter'>
             {items.map((item) => (
                 <tr key={item.id}>
                     <td>{item.name}</td>
