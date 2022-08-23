@@ -1,0 +1,45 @@
+.registrationTitle{
+    margin: 5%;
+    align-self: center;
+}
+
+.registrationForm{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 5%;
+}
+
+.inputTitles{
+    font-family: 'Comfortaa', cursive;
+    font-weight: 900;
+    text-align: left;
+    margin: 1%;
+}
+
+.inputFields{
+    font-family: 'Comfortaa', cursive;
+    width: 95%;
+    height: 30px;;
+    border: 1px solid rgb(60, 60, 60);
+    margin: 1%;
+    padding: 1%;
+}
+
+.buttonRegistro{
+    margin: 1%;
+    height: 50px;
+    width: 20%;
+    align-self: flex-end;
+    background-color: rgb(0, 0, 130);
+    border-radius: 8px;
+    color: white;
+    font-weight: 900;
+    font-size: larger;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.buttonRegistro:hover{
+    transform: scale(1.1);
+}

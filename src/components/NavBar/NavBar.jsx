@@ -1,14 +1,14 @@
 import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.css';
 import companyLogo from '../assets/environmentalism.webp';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 const NavBar = () => {
 
-const auth = getAuth();
-
+    const auth = getAuth();
+    const navigate = useNavigate();
 
     const handleLogin = () => {
         Swal.fire({
@@ -16,25 +16,34 @@ const auth = getAuth();
             html:  '<div><p class="inputTexts">Email</p>' +
             '<input id="swal-input3" class="inputField" type="email" placeholder="Ingresar mail">' +
             '<p class="inputTexts">Password</p>' +
-            '<input id="swal-input4" class="inputField" type="email" placeholder="Ingresar mail">' +
+            '<input id="swal-input4" class="inputField" type="password" placeholder="Ingresar contraseña">' +
             '</div>',
             showCancelButton: true,
             confirmButtonText: '<p class="inputTexts">Enviar</p>',
+            showDenyButton: true,
+            denyButtonText: '<p class="inputTexts">Registrarse</p>',
             showLoaderOnConfirm: true,
             focusConfirm: false,
             preConfirm: () => {
-
-                createUserWithEmailAndPassword(auth, document.getElementById('swal-input3').value, document.getElementById('swal-input4').value)
+                signInWithEmailAndPassword(auth, document.getElementById('swal-input3').value, document.getElementById('swal-input4').value)
                 .then((userCredential) => {
                   // Signed in
                   const user = userCredential.user;
                   // ...
                 })
-                .catch((error) => {
-                  const errorCode = error.code;
-                  const errorMessage = error.message;
+                .catch((error) => { 
+                  Swal.fire({
+                    title: 'Error',
+                    text: error.message,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                  })  
                   // ..
-                });
+                })
+            }
+          }).then((result) => {
+            if(result.isDenied){
+                navigate('/register')
             }
           })
     }

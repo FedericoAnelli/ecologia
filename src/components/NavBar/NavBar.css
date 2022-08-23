@@ -113,3 +113,9 @@ li{
 .logoClass:active{
     transform: scale(0.5);
 }
+
+/* Texto no tiene usuario aun */
+.noUser{
+text-align: left;
+margin-top: 5%;
+}

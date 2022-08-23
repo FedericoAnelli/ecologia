@@ -6,6 +6,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import { Routes, Route, BrowserRouter, useNavigate } from 'react-router-dom';
 import CartContainer from './components/CartContainer/CartContainer';
 import CartProvider from './context/CartContext';
+import RegistrationContainer from './components/RegistrationContainer/RegistrationContainer';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/project/:projectId" element={<ItemDetailContainer />} />
         <Route path="/project/error" element={<p className='errorParagraph'>El proyecto al que intentas acceder no existe. Click <strong className='acaParagraph' onClick={backToHome}>ACÁ</strong> para volver</p>} />
+        <Route path="/register" element={<RegistrationContainer />} />
         <Route
                     path="/category/:category"
                     element={<ItemListContainer />}
