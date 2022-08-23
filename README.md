@@ -14,55 +14,14 @@ De los proyectos, el más parecido es GoFundMe. Sin embargo, es diferente. Mient
 
 # Dependencias utilizadas
 
-### `gh-pages (4.0.0)`
+### `Sweet Alert 2 (11.4.29)`
 
 1. El package.json tiene que tener un campo `homepage`: 
 
 ```javascript
-  "homepage": "https://<github-username>.github.io/<project-repo>"
+  $ npm install sweetalert2
 ```
 
-2.1. Instalar `gh-pages` via npm:
-
-```javascript
-  npm i --save-dev gh-pages
-```
-
-2.2. O yarn (recomendado):
-
-```javascript
-  yarn add --dev gh-pages
-```
-
-3.1. Agregar nuevo `script` a `package.json` via `yarn`:
-
-```javascript
-    "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build"
-```
-
-3.2. O `npm`:
-
-```javascript
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-```
-
-
-
-### `react-router-dom (6.3.0)`
-
-Instalar vía npm
-
-```javascript
-$ npm install react-router-dom@6
-```
-
-o Yarn
-
-```javascript
-$ yarn add react-router-dom@6
-```
 
 
 # Comandos
