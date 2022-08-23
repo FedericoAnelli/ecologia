@@ -20,6 +20,17 @@ De los proyectos, el más parecido es GoFundMe. Sin embargo, es diferente. Mient
   $ npm install sweetalert2
 ```
 
+### `Firebase (9.9.2)`
+
+```javascript
+  $ npm install firebase
+```
+
+### `React-Router-Dom (9.9.2)`
+
+```javascript
+  $ npm i react-router-dom
+```
 
 
 # Comandos
