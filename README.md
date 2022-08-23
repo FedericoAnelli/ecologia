@@ -26,7 +26,7 @@ De los proyectos, el más parecido es GoFundMe. Sin embargo, es diferente. Mient
   $ npm install firebase
 ```
 
-### `React-Router-Dom (9.9.2)`
+### `React-Router-Dom (6.3.0)`
 
 ```javascript
   $ npm i react-router-dom
