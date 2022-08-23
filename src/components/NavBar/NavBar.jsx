@@ -1,14 +1,19 @@
 import CartWidget from '../CartWidget/CartWidget';
+import { useContext } from 'react';
+import { UserContext } from '../../context/UserContext';
 import './NavBar.css';
 import companyLogo from '../assets/environmentalism.webp';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
+
 const NavBar = () => {
 
     const auth = getAuth();
     const navigate = useNavigate();
+    const valueToShare = useContext(UserContext);
+    const { user } = useContext(UserContext);
 
     const handleLogin = () => {
         Swal.fire({
@@ -29,6 +34,7 @@ const NavBar = () => {
                 .then((userCredential) => {
                   // Signed in
                   const user = userCredential.user;
+                  valueToShare.setUserData(user)
                   // ...
                 })
                 .catch((error) => { 
@@ -55,7 +61,7 @@ const NavBar = () => {
                     <li>Descubrir</li>
                     <li>Empieza un proyecto</li>
                     <li><Link to="/"><img className="logoClass" src={companyLogo}></img></Link></li>
-                    <li><p onClick={handleLogin}>Login</p></li>
+                    <li>{ user.length !== 0 ? (<p>{user.email}</p>) : (<p onClick={handleLogin}>Login</p>)}</li>
                     <li><CartWidget /></li>
             </ul>
 

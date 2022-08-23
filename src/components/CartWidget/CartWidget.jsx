@@ -8,7 +8,7 @@ import './CartWidget.css'
 const CartWidget = () => {
     const valueToShare = useContext(CartContext)
     const navigate = useNavigate();
-    
+
     const navigateToCart = () => {
             navigate('/cart')
     }
