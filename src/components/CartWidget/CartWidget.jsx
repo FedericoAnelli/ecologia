@@ -13,10 +13,6 @@ const CartWidget = () => {
             navigate('/cart')
     }
 
-    if (valueToShare.quantityInCart === 0){
-        return <></>
-    }
-
     return (
         <div className='containerStyle' onClick={navigateToCart}>
             <p className='amountInCartStyle'>{valueToShare.quantityInCart}</p>

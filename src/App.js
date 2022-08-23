@@ -3,13 +3,17 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter, useNavigate } from 'react-router-dom';
 import CartContainer from './components/CartContainer/CartContainer';
-import Cart from './components/Cart/Cart';
 import CartProvider from './context/CartContext';
 
 function App() {
 
+  const navigate = useNavigate();
+
+  const backToHome = () => {
+    navigate('/');
+  }
 
   return (
 
@@ -18,6 +22,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/project/:projectId" element={<ItemDetailContainer />} />
+        <Route path="/project/error" element={<p className='errorParagraph'>El proyecto al que intentas acceder no existe. Click <strong className='acaParagraph' onClick={backToHome}>ACÁ</strong> para volver</p>} />
         <Route
                     path="/category/:category"
                     element={<ItemListContainer />}
