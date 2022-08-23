@@ -86,13 +86,3 @@ const CartContainer = () => {
 }
 
 export default CartContainer;
-
-/* 
-
-        <Container className='cartContainer'>
-            <Cart items={cart} onDelete={handleDelete}/>
-            <p className='totalP'><strong>Total:</strong> ${total}</p>
-            <button className='finalizeButton' onClick={sendOrder}>Finalizar compra</button>
-        </Container>
-
-*/
