@@ -7,13 +7,6 @@ import "./CartContainer.css";
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-const USER_DEMO = {
-    name: "fede",
-    phone: "1159704798",
-    email: "federicoanelli@gmail.com"
-}
-
-
 
 const CartContainer = () => {
     const valueToShare = useContext(CartContext)
