@@ -16,8 +16,6 @@ De los proyectos, el más parecido es GoFundMe. Sin embargo, es diferente. Mient
 
 ### `Sweet Alert 2 (11.4.29)`
 
-1. El package.json tiene que tener un campo `homepage`: 
-
 ```javascript
   $ npm install sweetalert2
 ```
