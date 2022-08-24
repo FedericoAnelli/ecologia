@@ -39,8 +39,9 @@ Librería utilizada para la persistencia de datos y autenticación
   $ npm install firebase
 ```
 
-Librería utilizada para el manejo de rutas y navegación del proyecto
 ### `React-Router-Dom (6.3.0)`
+
+Librería utilizada para el manejo de rutas y navegación del proyecto
 
 ```javascript
   $ npm i react-router-dom
