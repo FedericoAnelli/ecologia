@@ -46,7 +46,7 @@ const CartContainer = () => {
     }
 
     const handleSendOrder = () => {
-        if(user.length === 0){
+        if(!localStorage.getItem('user')){
                 Swal.fire({
                     title: '<p class="titleAlert">Datos de la compra</p>',
                     html: '<div><p class="inputTexts">Nombre</p>' +
