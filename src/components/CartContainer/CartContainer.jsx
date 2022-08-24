@@ -22,6 +22,7 @@ const CartContainer = () => {
         navigate('/')
     }
 
+    // Envia la orden de compra a Firebase
     const sendOrder = (name, phone, email) => {
         const newOrder = {
             buyer: name,
@@ -30,11 +31,11 @@ const CartContainer = () => {
             items: cart,
             total: total 
         }
-
         const db = getFirestore();
         const ordersCollection = collection(db, 'orders');
         addDoc(ordersCollection, newOrder)
             .then(({id}) => {
+                // Envia pop up de confirmacion
                 Swal.fire({
                     title: '¡Gracias!',
                     html: '<p>Su pedido ha sido enviado.<br> Número de órden: <strong>' + id+ '</strong></p>',
@@ -47,6 +48,7 @@ const CartContainer = () => {
 
     const handleSendOrder = () => {
         if(!localStorage.getItem('user')){
+            // Si el usuario no está loggeado, ofrece completar los datos para finalizar compra
                 Swal.fire({
                     title: '<p class="titleAlert">Datos de la compra</p>',
                     html: '<div><p class="inputTexts">Nombre</p>' +
@@ -65,6 +67,7 @@ const CartContainer = () => {
           })}
           else
           {
+            // Si el usuario está loggeado, finaliza la compra con los datos existentes
                 Swal.fire({
                     title: '<p class="titleAlert">Datos de la compra</p>',
                     html: '<div><p class="inputTexts"> Comprar como: ' + user.email +'</p></div>',
