@@ -61,7 +61,7 @@ const NavBar = () => {
                     <li>Descubrir</li>
                     <li>Empieza un proyecto</li>
                     <li><Link to="/"><img className="logoClass" src={companyLogo}></img></Link></li>
-                    <li>{ user.length !== 0 ? (<p>{user.email}</p>) : (<p onClick={handleLogin}>Login</p>)}</li>
+                    <li>{ localStorage.getItem('user') !== null ? (<p>{user.email}</p>) : (<p onClick={handleLogin}>Login</p>)}</li>
                     <li><CartWidget /></li>
             </ul>
 
