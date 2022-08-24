@@ -46,6 +46,13 @@ const CartContainer = () => {
             })
     }
 
+    // Valida si email es correcto
+    function validateEmail(email) 
+    {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+
     const handleSendOrder = () => {
         if(!localStorage.getItem('user')){
             // Si el usuario no está loggeado, ofrece completar los datos para finalizar compra
@@ -62,7 +69,45 @@ const CartContainer = () => {
                     showLoaderOnConfirm: true,
                     focusConfirm: false,
                     preConfirm: () => {
-                    sendOrder(document.getElementById('swal-input1').value, document.getElementById('swal-input2').value, document.getElementById('swal-input3').value)
+                        // Valida si el nombre ingresado es correcto
+                        if (document.getElementById('swal-input1').value === '' || !isNaN(document.getElementById('swal-input2').value)){
+                            Swal.fire({
+                                title: 'Error',
+                                text: 'Debe ingresar un nombre',
+                                icon: 'error',
+                                confirmButtonText: 'OK',
+                                preConfirm: () => {
+                                    handleSendOrder();
+                                }
+                            })
+                            // Valida si el número de teléfono es correcto
+                        } else if (document.getElementById('swal-input2').value === '' || isNaN(document.getElementById('swal-input2').value)){
+                            Swal.fire({
+                                title: 'Error',
+                                text: 'Por favor ingrese un número de teléfono válido',
+                                icon: 'error',
+                                confirmButtonText: 'OK',
+                                preConfirm: () => {
+                                    handleSendOrder();
+                                }
+                            })
+                            // Valida si el email es correcto
+                        } else if (!validateEmail(document.getElementById('swal-input3').value))
+                        {
+                            Swal.fire({
+                                title: 'Error',
+                                text: 'Por favor ingrese un email válido',
+                                icon: 'error',
+                                confirmButtonText: 'OK',
+                                preConfirm: () => {
+                                    handleSendOrder();
+                                }
+                            })
+                        }
+                        // Envía orden de compra a firebase
+                        else {
+                            sendOrder(document.getElementById('swal-input1').value, document.getElementById('swal-input2').value, document.getElementById('swal-input3').value)
+                        }                    
                     }
           })}
           else
