@@ -28,6 +28,7 @@ De los proyectos, el más parecido es GoFundMe. Sin embargo, es diferente. Mient
 ### `Sweet Alert 2 (11.4.29)`
 
 [Ir a Sweet Alert 2](https://sweetalert2.github.io/)
+
 Librería utilizada para el manejo de pop ups/alertas
 ```javascript
   $ npm install sweetalert2
@@ -36,6 +37,7 @@ Librería utilizada para el manejo de pop ups/alertas
 ### `Firebase (9.9.2)`
 
 [Ir a Firebase](https://firebase.google.com/)
+
 Librería utilizada para la persistencia de datos y autenticación
 ```javascript
   $ npm install firebase
@@ -44,6 +46,7 @@ Librería utilizada para la persistencia de datos y autenticación
 ### `React-Router-Dom (6.3.0)`
 
 [Ir a React-Router-Dom](https://reactrouter.com/en/main)
+
 Librería utilizada para el manejo de rutas y navegación del proyecto
 
 ```javascript
