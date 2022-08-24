@@ -3,12 +3,22 @@ import { createContext, useState } from "react";
 export const CartContext = createContext({})
 
 const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState(getInitialState())
+
+    function getInitialState() {
+        return JSON.parse(localStorage.getItem('cart')) || []
+    }
 
     const isInCart = () => {}
 
     const cleanCart = () => {
         setCart([])
+        localStorage.setItem('cart', JSON.stringify([]))
+    }
+
+    const setCartItem = (item) => {
+        setCart(item);
+        localStorage.setItem("cart", JSON.stringify(item))
     }
 
     const addToCart = (item, quantity) => {
@@ -18,7 +28,7 @@ const CartProvider = ({ children }) => {
                 ...item,
                 quantity: quantity
             }
-            setCart([itemToAdd])
+            setCartItem([itemToAdd])
         return
         }
 
@@ -31,7 +41,7 @@ const CartProvider = ({ children }) => {
             }
             const updatedCart = [...cart]
             updatedCart[itemDuplicatesIndex] = itemToUpdate
-            setCart(updatedCart)
+            setCartItem(updatedCart)
         }
         else{
         // Agrega item nuevo
@@ -40,7 +50,7 @@ const CartProvider = ({ children }) => {
                 quantity: quantity
             }
             const updatedCart = [...cart, itemToAdd]
-            setCart(updatedCart)
+            setCartItem(updatedCart)
         }
     }
 
@@ -48,7 +58,7 @@ const CartProvider = ({ children }) => {
         const itemToRemoveIndex = cart.findIndex((itemInCart) => itemInCart.id === itemToRemove.id)
         const updatedCart = [...cart]
         updatedCart.splice(itemToRemoveIndex, 1)
-        setCart(updatedCart)
+        setCartItem(updatedCart)
     }
 
     const quantityInCart = cart.reduce((previous, item) => previous + item.quantity, 0)
