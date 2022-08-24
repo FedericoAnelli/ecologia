@@ -12,6 +12,17 @@ El proyecto está inspirado en un número de plataformas como por ejemplo:
 
 De los proyectos, el más parecido es GoFundMe. Sin embargo, es diferente. Mientras que GoFundMe permite a cualquier usuario generar una causa benéfica de cualquier tema, este proyecto estará únicamente enfocado en causas benéficas y todos los proyectos integrados en la plataforma serán validados previamente. Es decir, no todos los proyectos serán aprobados.
 
+
+
+
+# Recorrido por las pantallas
+
+
+![Recorrido por las pantallas del proyecto](https://github.com/FedericoAnelli/ecologia/raw/main/src/components/assets/videoTutorial.gif)
+
+
+
+
 # Dependencias utilizadas
 
 ### `Sweet Alert 2 (11.4.29)`
@@ -31,6 +42,8 @@ De los proyectos, el más parecido es GoFundMe. Sin embargo, es diferente. Mient
 ```javascript
   $ npm i react-router-dom
 ```
+
+
 
 
 # Comandos
