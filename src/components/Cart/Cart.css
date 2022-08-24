@@ -35,8 +35,14 @@
 
 .alignX{
     cursor: pointer;
-    font-weight: 900;
+    font-weight: 500;
     color: rgb(195, 0, 0);
+    transition: all 0.5s;
+}
+
+.alignX:hover{
+    font-size: 18px;
+    font-weight: 900;
 }
 
 .alignColumnCenter{

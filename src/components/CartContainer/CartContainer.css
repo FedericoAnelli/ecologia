@@ -8,18 +8,28 @@
 }
 
 .finalizeButton{
-    margin: 1% 0 0 0;
+    margin: 1% 5% 0 0;
     font-weight: 900;
     background-color: blue;
     color: white;
-    width: 150px;
+    width: 20%;
     height: 30px;
     border-radius: 8px;
     align-self: flex-end;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.finalizeButton:hover{
+    transform: scale(1.1)
+}
+
+.finalizeButton:active{
+    transform: scale(0.9)
 }
 
 .totalP{
-    margin: 5% 5% 0 0;
+    margin: 5% 17% 0 0;
     align-self: flex-end;
 }
 
