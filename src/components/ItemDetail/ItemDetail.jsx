@@ -9,6 +9,7 @@ const ItemDetail = ({ project }) => {
   const [count, setCount] = useState(0);
   const navigate = useNavigate();
 
+  // Agrega cantidad de un item al carrito
   const handleAdd = (quantityToAdd) => {
     setCount(quantityToAdd);
     navigate("/cart");

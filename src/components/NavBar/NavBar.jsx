@@ -5,8 +5,7 @@ import './NavBar.css';
 import companyLogo from '../assets/environmentalism.webp';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const NavBar = () => {
 
@@ -16,6 +15,7 @@ const NavBar = () => {
     const { user } = useContext(UserContext);
 
     const handleLogin = () => {
+      // Dispara pop up de login
         Swal.fire({
             title: '<p class="titleAlert">Iniciar Sesión</p>',
             html:  '<div><p class="inputTexts">Email</p>' +

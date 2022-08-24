@@ -8,6 +8,7 @@ const RegistrationContainer = () => {
     const auth = getAuth();
     const navigate = useNavigate();
 
+    // Genera usuario en Firebase Authentication
     const handleRegistration = (email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {

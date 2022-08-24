@@ -5,22 +5,24 @@ export const CartContext = createContext({})
 const CartProvider = ({ children }) => {
     const [cart, setCart] = useState(getInitialState())
 
+    // Inicializa con carrito desde localStorage
     function getInitialState() {
         return JSON.parse(localStorage.getItem('cart')) || []
     }
 
-    const isInCart = () => {}
-
+    // Vacía el carrito
     const cleanCart = () => {
         setCart([])
         localStorage.setItem('cart', JSON.stringify([]))
     }
 
+    // Setea el carrito
     const setCartItem = (item) => {
         setCart(item);
         localStorage.setItem("cart", JSON.stringify(item))
     }
 
+    // Agrega item y cantidad al carrito
     const addToCart = (item, quantity) => {
         // Agrega item con carrito vacio
         if (cart.length === 0) {
@@ -54,6 +56,7 @@ const CartProvider = ({ children }) => {
         }
     }
 
+    // Remueve item del carrito
     function removeFromCart(itemToRemove){
         const itemToRemoveIndex = cart.findIndex((itemInCart) => itemInCart.id === itemToRemove.id)
         const updatedCart = [...cart]
@@ -61,10 +64,12 @@ const CartProvider = ({ children }) => {
         setCartItem(updatedCart)
     }
 
+    // Devuelve cantidad de items en el carrito
     const quantityInCart = cart.reduce((previous, item) => previous + item.quantity, 0)
 
+    // Valores a compartir del context
     const valueToShare = {
-        cart, isInCart, cleanCart, addToCart, removeFromCart, quantityInCart
+        cart, cleanCart, addToCart, removeFromCart, quantityInCart
     }
 
     return(

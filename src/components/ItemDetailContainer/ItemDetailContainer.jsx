@@ -14,7 +14,7 @@ const ItemDetailContainer = ()=>{
   useEffect(() => {
     const db = getFirestore();
     const item = doc(db, 'items', projectId)
-    
+    // Busca item en Firebase
     getDoc(item)
       .then((snapshot) => {
           if (snapshot.exists()) {
@@ -24,6 +24,7 @@ const ItemDetailContainer = ()=>{
               }
               setItem(data)
           } else {
+            // Devuelve error si la URL del item esta mal
             navigate('/project/error')
           }
       })

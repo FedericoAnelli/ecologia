@@ -4,13 +4,13 @@ import './ItemListContainer.css';
 import ItemList from '../ItemList/ItemList';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import getProjects from '../Services/DataRetrieve';
 import { collection, getDocs, getFirestore, query, where} from "firebase/firestore";
 
 const ItemListContainer = ({greeting}) => {
     const [projects, setProjects] = useState([]); 
     const { category } = useParams();
 
+    // Pide items de Firebase
     useEffect(() => {
       const db = getFirestore();
       const itemsCollection = collection(db, 'items')
@@ -23,6 +23,7 @@ const ItemListContainer = ({greeting}) => {
         .catch((error) => console.log(error))
     }, [])
 
+    // Filtra items por categoria
     useEffect(() => {
         if (category){
         const db = getFirestore();
