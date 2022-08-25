@@ -70,7 +70,7 @@ const CartContainer = () => {
                     focusConfirm: false,
                     preConfirm: () => {
                         // Valida si el nombre ingresado es correcto
-                        if (document.getElementById('swal-input1').value === '' || !isNaN(document.getElementById('swal-input2').value)){
+                        if (document.getElementById('swal-input1').value === ''){
                             Swal.fire({
                                 title: 'Error',
                                 text: 'Debe ingresar un nombre',
