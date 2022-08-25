@@ -60,13 +60,13 @@ const NavBar = () => {
             <ul className="topMenu">
                     <li>Descubrir</li>
                     <li>Empieza un proyecto</li>
-                    <li><Link to="/"><img className="logoClass" src={companyLogo}></img></Link></li>
+                    <li><Link to="/category/all"><img className="logoClass" src={companyLogo}></img></Link></li>
                     <li>{ localStorage.getItem('user') !== null ? (<p>{user.email}</p>) : (<p onClick={handleLogin}>Login</p>)}</li>
                     <li><CartWidget /></li>
             </ul>
 
             <ul className="bottomMenu">
-            <li><Link className='bottomLink' to="*">Mostrar todos</Link></li>
+            <li><Link className='bottomLink' to="/category/all">Mostrar todos</Link></li>
             <li><Link className='bottomLink' to="/category/water">Agua</Link></li>
             <li><Link className='bottomLink' to="/category/animals">Animales</Link></li>
             <li><Link className='bottomLink' to="/category/forest">Forestación</Link></li>

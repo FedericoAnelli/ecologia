@@ -29,13 +29,27 @@ const ItemListContainer = ({greeting}) => {
         const db = getFirestore();
         const itemsCollectionQuery = query((collection(db, 'items')), where('category', '==', category));
         
-        getDocs(itemsCollectionQuery)
-          .then((snapshot) => {
-              const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
-              setProjects(data)
-          })
-          .catch((error) => console.log(error))
+        if (category === 'all'){
+            const itemsCollection = collection(db, 'items')
+            getDocs(itemsCollection)
+            .then((snapshot) => {
+                const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+                setProjects(data)
+            })
+            .catch((error) => console.log(error))
         }
+        else
+        {
+
+            getDocs(itemsCollectionQuery)
+            .then((snapshot) => {
+                const data = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+                setProjects(data)
+            })
+            .catch((error) => console.log(error))
+            }
+
+    }
       }, [category])
 
     return (

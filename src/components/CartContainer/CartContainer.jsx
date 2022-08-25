@@ -136,7 +136,7 @@ const CartContainer = () => {
             <p className='totalP'><strong>Total:</strong> ${total}</p>
             <button className='finalizeButton' onClick={handleSendOrder}>Finalizar compra</button>
             </div> 
-        ) : (<div className="cartContainer"><p>El carrito está vacío. Click <strong onClick={navigateToHome}>ACÁ</strong> para volver.</p></div>)}
+        ) : (<div className="cartContainer"><p>El carrito está vacío. Click <strong className='acaClick' onClick={navigateToHome}>ACÁ</strong> para volver.</p></div>)}
 
         </Container>
 

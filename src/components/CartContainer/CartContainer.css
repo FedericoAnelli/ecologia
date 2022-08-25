@@ -54,3 +54,7 @@
     font-weight: 900;
     margin: 3% 0 0 2%;
 }
+
+.acaClick{
+    cursor: pointer;
+}
