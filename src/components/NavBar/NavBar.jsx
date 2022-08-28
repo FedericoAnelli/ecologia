@@ -5,6 +5,7 @@ import './NavBar.css';
 import companyLogo from '../assets/environmentalism.webp';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const NavBar = () => {
@@ -13,15 +14,17 @@ const NavBar = () => {
     const navigate = useNavigate();
     const valueToShare = useContext(UserContext);
     const { user } = useContext(UserContext);
+    const MySwal = withReactContent(Swal)
 
     const handleLogin = () => {
       // Dispara pop up de login
-        Swal.fire({
+      
+        MySwal.fire({
             title: '<p class="titleAlert">Iniciar Sesión</p>',
             html:  '<div><p class="inputTexts">Email</p>' +
-            '<input id="swal-input3" class="inputField" type="email" placeholder="Ingresar mail">' +
+            '<input id="emailInput" class="inputField" type="email" placeholder="Ingresar mail">' +
             '<p class="inputTexts">Password</p>' +
-            '<input id="swal-input4" class="inputField" type="password" placeholder="Ingresar contraseña">' +
+            '<input id="passwordInput" class="inputField" type="password" placeholder="Ingresar contraseña">' +
             '</div>',
             showCancelButton: true,
             confirmButtonText: '<p class="inputTexts">Enviar</p>',
@@ -29,25 +32,39 @@ const NavBar = () => {
             denyButtonText: '<p class="inputTexts">Registrarse</p>',
             showLoaderOnConfirm: true,
             focusConfirm: false,
-            preConfirm: () => {
-                signInWithEmailAndPassword(auth, document.getElementById('swal-input3').value, document.getElementById('swal-input4').value)
-                .then((userCredential) => {
-                  // Signed in
-                  const user = userCredential.user;
-                  valueToShare.setUserData(user)
-                  // ...
-                })
-                .catch((error) => { 
-                  Swal.fire({
-                    title: 'Error',
-                    text: error.message,
-                    icon: 'error',
-                    confirmButtonText: 'OK'
-                  })  
-                  // ..
-                })
-            }
-          }).then((result) => {
+            didOpen: () =>  { 
+                const emailInput = MySwal.getHtmlContainer().querySelector('#emailInput')
+                const passwordInput = MySwal.getHtmlContainer().querySelector('#passwordInput')
+                
+                const buttonConfirm = MySwal.getConfirmButton()
+                buttonConfirm.onclick = () => {
+
+                signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
+                  .then((userCredential) => {
+                      // Signed in 
+                      const user = userCredential.user;
+                      valueToShare.setUserData(user);
+                      navigate('/');
+                      MySwal.close()
+                  }
+                  )
+                  .catch((error) => {
+                    MySwal.fire({
+                      title: '<p class="titleAlert">Error</p>',
+                      html: '<div><p class="inputTexts">'+ error.message +'</p></div>',
+                      showCancelButton: true,
+                      confirmButtonText: '<p class="inputTexts">Aceptar</p>',
+                      showLoaderOnConfirm: true,
+                      focusConfirm: false,
+                      icon: 'error',
+                      preConfirm: () => { 
+                        handleLogin(); 
+                      }
+                    })
+                  }
+                  )
+              }        
+          }}).then((result) => {
             if(result.isDenied){
                 navigate('/register')
             }

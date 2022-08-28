@@ -1,5 +1,5 @@
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import { CartContext } from "../../context/CartContext";
 import { UserContext } from '../../context/UserContext';
@@ -15,7 +15,6 @@ const CartContainer = () => {
     const valueToShare = useContext(CartContext)
     const { cart } = useContext(CartContext);
     const { user } = useContext(UserContext);
-    const [input, setInput] = useState([]);
     const navigate = useNavigate();
     
     const total = cart.reduce((acc, item) => acc + item.donacion * item.quantity, 0)
@@ -23,10 +22,6 @@ const CartContainer = () => {
 
     const navigateToHome = () => {
         navigate('/')
-    }
-
-    const handleInput = (a, b, c) => {
-        setInput({ [a.id]: a.value, [b.id]: b.value, [c.id]: c.value })
     }
 
     const fireError = (error) => {
