@@ -3,13 +3,12 @@ import { createContext, useState } from "react";
 export const CartContext = createContext({})
 
 const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState(getInitialState())
-
+    
     // Inicializa con carrito desde localStorage
-    function getInitialState() {
-        return JSON.parse(localStorage.getItem('cart')) || []
-    }
+    const getInitialState = () => JSON.parse(localStorage.getItem('cart')) || []
 
+    const [cart, setCart] = useState(getInitialState())
+ 
     // Vacía el carrito
     const cleanCart = () => {
         setCart([])

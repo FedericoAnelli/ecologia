@@ -3,15 +3,13 @@ import { createContext, useState } from "react";
 export const UserContext = createContext({})
 
 const UserProvider = ({ children }) => {
+    // Inicializa con usuario desde localStorage
+    const getInitialUser = () => JSON.parse(localStorage.getItem('user')) || []
+    
     const [user, setUser] = useState(getInitialUser())
 
-    // Inicializa con usuario desde localStorage
-    function getInitialUser() {
-        return JSON.parse(localStorage.getItem('user')) || {}
-    }
-
     // Setea el usuario en la navegacion y localStorage
-    function setUserData (userData) {
+    const setUserData = (userData) =>{
         setUser(userData)
         localStorage.setItem("user", JSON.stringify(userData))
     }
