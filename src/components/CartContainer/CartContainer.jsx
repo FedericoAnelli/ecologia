@@ -1,5 +1,5 @@
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import { CartContext } from "../../context/CartContext";
 import { UserContext } from '../../context/UserContext';
@@ -7,12 +7,15 @@ import Cart from "../Cart/Cart";
 import "./CartContainer.css";
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 
 const CartContainer = () => {
+    const MySwal = withReactContent(Swal)
     const valueToShare = useContext(CartContext)
     const { cart } = useContext(CartContext);
     const { user } = useContext(UserContext);
+    const [input, setInput] = useState([]);
     const navigate = useNavigate();
     
     const total = cart.reduce((acc, item) => acc + item.donacion * item.quantity, 0)
@@ -20,6 +23,19 @@ const CartContainer = () => {
 
     const navigateToHome = () => {
         navigate('/')
+    }
+
+    const handleInput = (a, b, c) => {
+        setInput({ [a.id]: a.value, [b.id]: b.value, [c.id]: c.value })
+    }
+
+    const fireError = (error) => {
+        MySwal.fire({
+            title: <p>¡Ups!</p>,
+            text: error,
+            icon: 'error',
+            confirmButtonText: 'OK'
+        })
     }
 
     // Envia la orden de compra a Firebase
@@ -55,65 +71,43 @@ const CartContainer = () => {
 
     const handleSendOrder = () => {
         if(!localStorage.getItem('user')){
-            // Si el usuario no está loggeado, ofrece completar los datos para finalizar compra
-                Swal.fire({
-                    title: '<p class="titleAlert">Datos de la compra</p>',
-                    html: '<div><p class="inputTexts">Nombre</p>' +
-                    '<input id="swal-input1" class="inputField" type="text" placeholder="Ingresar nombre">' +
+           // Si el usuario no está loggeado, ofrece completar los datos para finalizar compra
+            MySwal.fire({
+                title: '<p class="titleAlert">Datos de la compra</p>',
+                html: '<div><p class="inputTexts">Nombre</p>' +
+                    '<input id="nameInput" class="inputField" type="text" placeholder="Ingresar nombre">' +
                     '<div><p class="inputTexts">Teléfono</p>' +
-                    '<input id="swal-input2" class="inputField" type="tel" placeholder="Ingresar teléfono">' +
+                    '<input id="phoneInput" class="inputField" type="tel" placeholder="Ingresar teléfono">' +
                     '<div><p class="inputTexts">Email</p>' +
-                    '<input id="swal-input3" class="inputField" type="email" placeholder="Ingresar mail"></div>',
+                    '<input id="mailInput" class="inputField" type="email" placeholder="Ingresar mail"></div>',
                     showCancelButton: true,
                     confirmButtonText: '<p class="inputTexts">Enviar</p>',
-                    showLoaderOnConfirm: true,
                     focusConfirm: false,
-                    preConfirm: () => {
-                        // Valida si el nombre ingresado es correcto
-                        if (document.getElementById('swal-input1').value === ''){
-                            Swal.fire({
-                                title: 'Error',
-                                text: 'Debe ingresar un nombre',
-                                icon: 'error',
-                                confirmButtonText: 'OK',
-                                preConfirm: () => {
-                                    handleSendOrder();
-                                }
-                            })
-                            // Valida si el número de teléfono es correcto
-                        } else if (document.getElementById('swal-input2').value === '' || isNaN(document.getElementById('swal-input2').value)){
-                            Swal.fire({
-                                title: 'Error',
-                                text: 'Por favor ingrese un número de teléfono válido',
-                                icon: 'error',
-                                confirmButtonText: 'OK',
-                                preConfirm: () => {
-                                    handleSendOrder();
-                                }
-                            })
-                            // Valida si el email es correcto
-                        } else if (!validateEmail(document.getElementById('swal-input3').value))
-                        {
-                            Swal.fire({
-                                title: 'Error',
-                                text: 'Por favor ingrese un email válido',
-                                icon: 'error',
-                                confirmButtonText: 'OK',
-                                preConfirm: () => {
-                                    handleSendOrder();
-                                }
-                            })
+                    didOpen: () => {
+                        const nameInput = MySwal.getHtmlContainer().querySelector('#nameInput')
+                        const phoneInput = MySwal.getHtmlContainer().querySelector('#phoneInput')
+                        const mailInput = MySwal.getHtmlContainer().querySelector('#mailInput')
+                        const buttonSend = MySwal.getConfirmButton()
+
+                        buttonSend.onclick = () => {
+                            if (nameInput.value === '') {
+                                fireError('Debe ingresar un nombre')
+                            } else if (phoneInput.value === '' || isNaN(phoneInput.value)) {
+                                fireError('Debe ingresar un teléfono válido')
+                            } else if (mailInput.value === '' || !validateEmail(mailInput.value)) {
+                                fireError('Debe ingresar un email válido')
+                            } else {
+                            sendOrder(nameInput.value, phoneInput.value, mailInput.value)
+                            MySwal.close()
+                            }
                         }
-                        // Envía orden de compra a firebase
-                        else {
-                            sendOrder(document.getElementById('swal-input1').value, document.getElementById('swal-input2').value, document.getElementById('swal-input3').value)
-                        }                    
-                    }
+
+                },
           })}
           else
           {
             // Si el usuario está loggeado, finaliza la compra con los datos existentes
-                Swal.fire({
+                MySwal.fire({
                     title: '<p class="titleAlert">Datos de la compra</p>',
                     html: '<div><p class="inputTexts"> Comprar como: ' + user.email +'</p></div>',
                     showCancelButton: true,
