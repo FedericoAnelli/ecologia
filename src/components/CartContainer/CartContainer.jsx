@@ -34,7 +34,10 @@ const CartContainer = () => {
             title: <p>¡Ups!</p>,
             text: error,
             icon: 'error',
-            confirmButtonText: 'OK'
+            confirmButtonText: 'OK',
+            preConfirm: () => {
+                handleSendOrder()
+            }
         })
     }
 
